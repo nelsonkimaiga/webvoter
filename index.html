@@ -102,5 +102,17 @@
 
 	</div>
 </div>
+
+<!-- Javascript files -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <!-- countdown timer javascript code -->
+  <script type="text/javascript">
+  $('#countdown').countdown('2017/08/01', function(event) { //date to countdown
+    $(this).html(event.strftime('Count down to the General Election: %w weeks %d days %H:%M:%S')); //mesasge that prints out when the code executes
+  });
+</script>
 </body>
 </html>
