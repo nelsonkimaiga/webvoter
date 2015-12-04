@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
 <head>
     <meta charset="utf-8">
@@ -15,7 +20,7 @@
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   	<!-- JavaScript  -->
   <script src="js/jquery-1.11.3.min.js"></script>
-  <script src="js/modernizr.js"></script>	
+  <script src="js/modernizr.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -36,12 +41,12 @@
         <div class="col-sm-12 col-md-12 col-lg-12">
           <div id="movingicon">
                       <i class="fa fa-hourglass fa-2x fa-spin icon-color"></i>
-  <br/>   
-                     
-                
+  <br/>
+
+
           <div id="countdown"></div> <!--calling this countdown class for the countdown timer javascript-->
-        </div>             
-        </div>        
+        </div>
+        </div>
       </div>
 
 <!-- Headline -->
@@ -113,8 +118,9 @@
   <!-- countdown timer javascript code -->
   <script type="text/javascript">
   $('#countdown').countdown('2017/08/01', function(event) { //date to countdown
-    $(this).html(event.strftime('Count down to the General Election: %w weeks %d days %H:%M:%S')); //mesasge that prints out when the code executes
+    $(this).html(event.strftime('Count down to the General Election: %w weeks %d days %H:%M:%S')); //message that prints out when the code executes
   });
 </script>
 </body>
 </html>
+
