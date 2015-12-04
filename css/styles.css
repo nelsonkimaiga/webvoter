@@ -52,3 +52,29 @@ body {
     display: inline;
 }
 
+/*moving icon*/
+#movingicon {
+    margin-top:2px;
+    text-align:center;
+    vertical-align:central;
+    color:rgb(255, 153, 0);
+    /*font-weight:900;*/
+    font-size:25px;
+    letter-spacing:3px;
+}
+
+.icon-color{
+    color:#3366ff;
+}
+
+/*candidates*/
+#candidates{
+    margin-top: 100px;
+    display: inline;
+    /*margin: 0 1em 1em 0;*/
+}
+
+#candidates img{
+margin: 0 1em 1em 0;
+position: relative;
+}
