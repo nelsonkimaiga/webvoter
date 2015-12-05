@@ -1,96 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>vote</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
-<link href="css/bootstrap.css" rel="stylesheet">
-</head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>E-Voter|Vote</title>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <!-- font-awsome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <!-- JavaScript  -->
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/modernizr.js"></script>
 <body>
-  <!-- div container -->
-<div class="container">
-
-<div class="row">
-<div class="col-xs-6 col-md-4"></div>
-  <form class="form-inline">
-  <div class="form-group">
-    <label for="exampleInputID2">ID NO:</label>
-    <input type="text" class="form-control" id="exampleInputID2" placeholder="22222222">
-  </div>
-  <button type="submit" class="btn btn-default">Verify</button>
-</form>
-</div>
-
-<br>
-<!-- start of aspirants form -->
-<div class="row">
-  <div id="candidates">
-  <div class="col-xs-6 col-sm-3">PRESIDENT
-    <form method="post">
-            <fieldset>
-                <input type="checkbox" name="president" value="uhuru" />UHURU KENYATTA <br />
-                <input type="checkbox" name="president" value="raila" />RAILA ODINGA<br />
-                <input type="checkbox" name="president" value="ken" />KENETH<br />
-                <input type="checkbox" name="president" value="musalia"/>MUSALIA MUDAVADI</br>
-                <input type="checkbox" name="president" value="charity"/>CHARITY NGILU</br>
-
-            </fieldset>
+<!-- container div -->
+<div id="wrapper">
+  <div class="container">
+    <!-- Verification form -->
+    <form action="" method="POST" class="form-inline">
+      <div class="form-group">
+        <label for="idNumber">ID Number:</label>
+        <input type="text" class="form-control" id="idNumber" placeholder="ID Number">
+      </div>
     </form>
-
-
   </div>
-
-  <div class="col-xs-6 col-sm-3">M.P
-
-  <form method="post">
-          <fieldset>
-  <input type="checkbox" name="members" value="omar" />OMARI MWINYI <br />
-  <input type="checkbox" name="members" value="mustapha" />MUSTAPHA IDDI<br />
-  <input type="checkbox" name="members" value="william" />WILLIAM KAMOTI<br />
-  <input type="checkbox" name="members" value="andrew"/>ANDREW MWADIME</br>
-  <input type="checkbox" name="members" value="adan"/>ADAN DUALE</br>
-</fieldset>
-</form>
 </div>
-  <!-- Optional: clear the XS cols if their content doesn't match in height -->
-  <!-- <div class="clearfix visible-xs-block"></div> -->
-  <div class="col-xs-6 col-sm-3">SENATOR
-    <form method="post">
-            <fieldset>
-    <input type="checkbox" name="senators" value="omar" />HASSAN OMAR <br />
-    <input type="checkbox" name="senators" value="boy" />BOY JUMA BOY<br />
-    <input type="checkbox" name="senators" value="ali" />ALI BULE<br />
-    <input type="checkbox" name="senators" value="dan"/>DAN MWAZO</br>
-    <input type="checkbox" name="senators" value="lenny"/>LENNY KIVUTI</br>
-  </fieldset>
-  </form>
-  </div>
-  <div class="col-xs-6 col-sm-3">GOVERNOR
-    <form method="post">
-            <fieldset>
-    <input type="checkbox" name="gavana" value="joho" />HASSAN JOHO <br />
-    <input type="checkbox" name="gavana" value="kingi" />AMASON KINGI<br />
-    <input type="checkbox" name="gavana" value="doyo" />GODANA DOYO<br />
-    <input type="checkbox" name="gavana" value="peter"/>PETER MUNYA</br>
-    <input type="checkbox" name="gavana" value="martin"/>MARTIN WAMBORA</br>
-  </fieldset>
-  </form>
-
-  </div>
-
 </div>
-<!--end of aspirants form -->
-
-</div>
-<div class="row">
-  <div id="voter">
-<div class="col-xs-6 col-md-4"></div>
-<button type="button" class="btn btn-success btn-lg">VOTE</button>
-</div>
-<div>
-<!-- end of conatainer -->
-</div
-<script src="js/bootstrap.js">
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
-
 </html>

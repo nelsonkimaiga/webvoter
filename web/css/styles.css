@@ -90,7 +90,7 @@ position: relative;
 }
 .cover-button .btn-success:hover {
     background-color: #1e2e4d;
-    color: #fff
+    color: #fff;
 }
 
 .options{
@@ -99,6 +99,7 @@ position: relative;
     bottom: 30px;
     z-index: 600;
     text-align: right;
+    color: #fff;
 }
 /*footer*/
 
