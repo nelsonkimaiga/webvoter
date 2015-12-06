@@ -22,52 +22,95 @@
   <div class="container">
     <!-- Verification form -->
 <div class="row">
-<div class="col-md-12">
- <form class="form-inline">
-  <div class="form-group">
-    <label class="sr-only" for="idNumber">ID Number</label>
-    <input type="text" class="form-control" id="idnumber" placeholder="ID Number">
-  </div>
+ <div class="col-xs-6 col-md-4"></div>
+  <form class="form-inline">
+   <div class="form-group">
+    <label for="idNumber">ID NO:</label>
+     <input type="text" class="form-control" id="idNo" placeholder="ID Number">
+   </div>
   <button type="submit" class="btn btn-default">Verify</button>
  </form>
- </div>
 </div>
 
 <br>
 
 <!-- voting button -->
 <div id="vote-btn">
-  <a href="#" role="button" class="btn btn-primary btn-large">Click to start Voting<i class="fa fa-info"></i></a>
+  <a href="#" role="button" class="btn btn-primary btn-large">Click to start Voting<i class="fa fa-check"></i></a>
 </div>
-
+<div class="container">
 <!-- image placeholders  -->
 <div class="row">
   <!-- applying the four-clumn grid system -->
   <!-- grid 1 -->
   <div class="col-xs-6 col-sm-3">
       <h3>President</h3>
-      <img src="images/uhuru.jpg" id="president" class="img-rounded">
+      <img src="" id="president" class="img-rounded">
+
+      <!-- drop-down menu populates with presidential candidates-->
+      <select class="form-control">
+        <option>Uhuru Kenyatta</option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+     </select>
   </div>
+
   <!-- grid 2 -->
    <div class="col-xs-6 col-sm-3">
       <h3>Governor</h3>
-      <img src="images/uhuru.jpg" id="president" class="img-rounded">
+      <img src="" id="governor" class="img-rounded">
+      <!-- drop-down menu populates with gubernatorial candidates-->
+      <select class="form-control">
+        <option>Evans Kidero</option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+     </select>
   </div>
   <!-- grid 3 -->
    <div class="col-xs-6 col-sm-3">
       <h3>Member of Parliament</h3>
-      <img src="images/uhuru.jpg" id="president" class="img-rounded">
+      <img src="" id="mp" class="img-rounded">
+      <!-- drop-down menu populates with parliamentary candidates-->
+      <select class="form-control">
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+     </select>
   </div>
   <!-- grid 4 -->
    <div class="col-xs-6 col-sm-3">
       <h3>Councillor</h3>
-      <img src="images/uhuru.jpg" id="president" class="img-rounded">
+      <img src="" id="mca" class="img-rounded">
+      <!-- drop-down menu populates with county-rep candidates-->
+      <select class="form-control">
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+        <option></option>
+     </select>
   </div>
-
-
+<!-- end of grids -->
+</div>
+<!-- end of row -->
 </div>
 
-
+<br>
+<!-- Vote serial id textbox -->
+<div class="row">
+  <form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="VoteSerial">Vote Serial Number:</label>
+    <input type="text" class="form-control" id="voteserial">
+  </div>
+</form>
+</div>
 
 
   </div>
