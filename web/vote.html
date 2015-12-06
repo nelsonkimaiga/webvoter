@@ -20,20 +20,59 @@
 <!-- container div -->
 <div id="wrapper">
   <div class="container">
-  
     <!-- Verification form -->
-    <form action="" method="POST" class="form-inline">
-      <div class="form-group">
-        <label for="idNumber">ID Number:</label>
-        <input type="text" class="form-control" id="idNumber" placeholder="ID Number">
-      </div>
-      <button type="submit" class="btn btn-default">Verify</button>
-    </form>
+<div class="row">
+<div class="col-md-12">
+ <form class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="idNumber">ID Number</label>
+    <input type="text" class="form-control" id="idnumber" placeholder="ID Number">
+  </div>
+  <button type="submit" class="btn btn-default">Verify</button>
+ </form>
+ </div>
+</div>
+
+<br>
+
+<!-- voting button -->
+<div id="vote-btn">
+  <a href="#" role="button" class="btn btn-primary btn-large">Click to start Voting<i class="fa fa-info"></i></a>
+</div>
+
+<!-- image placeholders  -->
+<div class="row">
+  <!-- applying the four-clumn grid system -->
+  <!-- grid 1 -->
+  <div class="col-xs-6 col-sm-3">
+      <h3>President</h3>
+      <img src="images/uhuru.jpg" id="president" class="img-rounded">
+  </div>
+  <!-- grid 2 -->
+   <div class="col-xs-6 col-sm-3">
+      <h3>Governor</h3>
+      <img src="images/uhuru.jpg" id="president" class="img-rounded">
+  </div>
+  <!-- grid 3 -->
+   <div class="col-xs-6 col-sm-3">
+      <h3>Member of Parliament</h3>
+      <img src="images/uhuru.jpg" id="president" class="img-rounded">
+  </div>
+  <!-- grid 4 -->
+   <div class="col-xs-6 col-sm-3">
+      <h3>Councillor</h3>
+      <img src="images/uhuru.jpg" id="president" class="img-rounded">
+  </div>
+
+
+</div>
+
+
 
 
   </div>
 </div>
-</div>
+<!--</div>-->
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>
