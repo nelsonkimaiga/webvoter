@@ -62,7 +62,7 @@
   <form action="SavePresident" method="POST">   
       <select class="form-control" name="president">
         <option value="Uhuru_kenyatta">Uhuru Kenyatta</option>
-        <option></option>
+        <option value="Raila">Raila</option>
         <option></option>
         <option></option>
         <option></option>

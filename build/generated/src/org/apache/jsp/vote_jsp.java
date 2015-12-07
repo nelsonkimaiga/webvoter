@@ -101,7 +101,7 @@ public final class vote_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <form action=\"SavePresident\" method=\"POST\">   \n");
       out.write("      <select class=\"form-control\" name=\"president\">\n");
       out.write("        <option value=\"Uhuru_kenyatta\">Uhuru Kenyatta</option>\n");
-      out.write("        <option></option>\n");
+      out.write("        <option value=\"Raila\">Raila</option>\n");
       out.write("        <option></option>\n");
       out.write("        <option></option>\n");
       out.write("        <option></option>\n");
