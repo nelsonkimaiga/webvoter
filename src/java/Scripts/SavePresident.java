@@ -48,7 +48,7 @@ public class SavePresident extends HttpServlet {
 //        }
 
 //form data
-             String president = request.getParameter("Uhuru_kenyatta");
+             String president = request.getParameter("president");
              
     Connection conn= null;
     String url = "jdbc:mysql://localhost/";

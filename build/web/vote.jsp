@@ -52,65 +52,18 @@
 <div class="row">
   <!-- applying the four-column grid system -->
   <!-- grid 1 -->
-  <div class="col-xs-6 col-sm-3">
-      <h3>President</h3>
-      <img src="" id="president" class="img-rounded">
-      
-<!--  Calling my Drop-down populating function    -->
-
-      <!-- drop-down menu populates with presidential candidates from the database-->
-  <form action="SavePresident" method="POST">   
+  <!--<div class="col-xs-6 col-sm-3">-->
+  <!-- drop-down menu populates with election candidates from the database-->
+  <form action="SavePresident" method="POST">
+      <!--Presidential drop-down-->
       <select class="form-control" name="president">
         <option value="Uhuru_kenyatta">Uhuru Kenyatta</option>
-        <option value="Raila">Raila</option>
-        <option></option>
-        <option></option>
-        <option></option>
+        <option value="Raila">Raila Amolo Odinga</option>
+        <option value="Ruto">William Ruto</option>
      </select>
       <button type="submit" class="btn btn-primary">Vote</button>
+      
   </form>   
-       </div>
-
-  <!-- grid 2 -->
-   <div class="col-xs-6 col-sm-3">
-      <h3>Governor</h3>
-      <img src="" id="governor" class="img-rounded">
-      <!-- drop-down menu populates with gubernatorial candidates-->
-      <select class="form-control">
-        <option>Evans Kidero</option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-     </select>
-  </div>
-  <!-- grid 3 -->
-   <div class="col-xs-6 col-sm-3">
-      <h3>Member of Parliament</h3>
-      <img src="" id="mp" class="img-rounded">
-      <!-- drop-down menu populates with parliamentary candidates-->
-      <select class="form-control">
-        <option>Nelson Kimaiga</option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-     </select>
-  </div>
-  <!-- grid 4 -->
-   <div class="col-xs-6 col-sm-3">
-      <h3>Councillor</h3>
-      <img src="" id="mca" class="img-rounded">
-      <!-- drop-down menu populates with county-rep candidates-->
-      <select class="form-control">
-        <option>Mbuvi Sonko</option>
-        <option></option>
-        <option></option>
-        <option></option>
-        <option></option>
-     </select>
-  </div>
-<!-- end of grids -->
 </div>
 <!-- end of row -->
 </div>
