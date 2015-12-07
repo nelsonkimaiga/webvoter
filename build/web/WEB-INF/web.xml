@@ -4,9 +4,17 @@
         <servlet-name>VerifyVoter</servlet-name>
         <servlet-class>Scripts.VerifyVoter</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SavePresident</servlet-name>
+        <servlet-class>Scripts.SavePresident</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>VerifyVoter</servlet-name>
         <url-pattern>/VerifyVoter</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SavePresident</servlet-name>
+        <url-pattern>/SavePresident</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

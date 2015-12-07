@@ -15,13 +15,12 @@ import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author kimaiga
  */
-public class VerifyVoter extends HttpServlet {
+public class SavePresident extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,16 +39,17 @@ public class VerifyVoter extends HttpServlet {
 //            out.println("<!DOCTYPE html>");
 //            out.println("<html>");
 //            out.println("<head>");
-//            out.println("<title>Servlet VerifyVoter</title>");            
+//            out.println("<title>Servlet SavePresident</title>");            
 //            out.println("</head>");
 //            out.println("<body>");
-//            out.println("<h1>Servlet VerifyVoter at " + request.getContextPath() + "</h1>");
+//            out.println("<h1>Servlet SavePresident at " + request.getContextPath() + "</h1>");
 //            out.println("</body>");
 //            out.println("</html>");
 //        }
 
-
-//Database connection variables
+//form data
+             String president = request.getParameter("Uhuru_kenyatta");
+             
     Connection conn= null;
     String url = "jdbc:mysql://localhost/";
     String dbName = "uchaguzi";
@@ -58,7 +58,7 @@ public class VerifyVoter extends HttpServlet {
     String password = "";
     Statement st = null;
     ResultSet rs;
-
+    
     //attmept to connect to db
              try{
 	       Class.forName(driver);
@@ -71,42 +71,16 @@ public class VerifyVoter extends HttpServlet {
 	            catch(Exception exp){
 	              out.println("<h3>Cannot connect to the database,check network settings.</h3>");
 	            }
-             
-          //get input form data
-          String idnumber=request.getParameter("id_number");
-          
-          //check for ID Number in DB
-          String sql = "Select id_no,s_name,m_name,m_name,gender,voter_id,ward,	constituency,county,poll_center	 from registration where id_no ='"+idnumber+"'";
-          
-            try{
-            int c=0;
-            rs = st.executeQuery(sql);
-            st = conn.prepareStatement(sql);
-             
-                  while(rs.next()){
-                    c++;
-                    }
-            if (c==1) {
-
-
-           rs = st.executeQuery(sql);
-           st = conn.prepareStatement(sql);
-            } 
-            
-            else {
-//                 JOptionPane.showMessageDialog(null, "<html><b><font color=red>NOT REGISTERED</font><br/>ID Number: <font color=red>"+id+"</font></html>\n<html><b>Voter ID : <font color=red>"+vid+"<br/> </html>","Information",JOptionPane.INFORMATION_MESSAGE );
-            }
-                           
-
-        } catch(Exception exp){
-            out.println("<h3>Cannot connect to the database,check network settings.</h3>");          
+//save the data
+              try {
+            String sql = "INSERT INTO test (president) VALUES ('" +president+"')";
+	              st.execute(sql);
+                      out.println("<h4>Yaay!</h4>");
+        } catch (Exception e) {
+            out.println("<h3>Error!.</h3>");
         }
-      
-            
-            
-            
-            
-            
+
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -122,7 +96,6 @@ public class VerifyVoter extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        
     }
 
     /**

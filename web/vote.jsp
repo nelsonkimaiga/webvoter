@@ -1,8 +1,9 @@
 <%-- 
     Document   : vote
-    Created on : Dec 7, 2015, 11:52:03 AM
+    Created on : Dec 7, 2015, 1:21:17 PM
     Author     : kimaiga
 --%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -24,13 +25,7 @@
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="js/modernizr.js"></script>
   
-  <!--pop-up message-->
-  <script type="text/javascript">
-function alertName(){
-alert("You're verified!");
-} 
-</script>
-
+  <!--Session initializer-->
 <body>
 <!-- container div -->
 <div id="wrapper">
@@ -53,23 +48,28 @@ alert("You're verified!");
 <br>
 
 <div class="container">
-<!-- image placeholders  -->
+<!-- image place-holders  -->
 <div class="row">
-  <!-- applying the four-clumn grid system -->
+  <!-- applying the four-column grid system -->
   <!-- grid 1 -->
   <div class="col-xs-6 col-sm-3">
       <h3>President</h3>
       <img src="" id="president" class="img-rounded">
+      
+<!--  Calling my Drop-down populating function    -->
 
-      <!-- drop-down menu populates with presidential candidates-->
-      <select class="form-control">
-        <option>Uhuru Kenyatta</option>
+      <!-- drop-down menu populates with presidential candidates from the database-->
+  <form action="SavePresident" method="POST">   
+      <select class="form-control" name="president">
+        <option value="Uhuru_kenyatta">Uhuru Kenyatta</option>
         <option></option>
         <option></option>
         <option></option>
         <option></option>
      </select>
-  </div>
+      <button type="submit" class="btn btn-primary">Vote</button>
+  </form>   
+       </div>
 
   <!-- grid 2 -->
    <div class="col-xs-6 col-sm-3">
@@ -90,7 +90,7 @@ alert("You're verified!");
       <img src="" id="mp" class="img-rounded">
       <!-- drop-down menu populates with parliamentary candidates-->
       <select class="form-control">
-        <option></option>
+        <option>Nelson Kimaiga</option>
         <option></option>
         <option></option>
         <option></option>
@@ -103,7 +103,7 @@ alert("You're verified!");
       <img src="" id="mca" class="img-rounded">
       <!-- drop-down menu populates with county-rep candidates-->
       <select class="form-control">
-        <option></option>
+        <option>Mbuvi Sonko</option>
         <option></option>
         <option></option>
         <option></option>
@@ -128,14 +128,14 @@ alert("You're verified!");
 </div>
 </div>
 
-<button type="button" class="btn btn-primary">Vote</button>
+<!--<button type="button" class="btn btn-primary">Vote</button>-->
 
   </div>
 </div>
 <!--</div>-->
-<script type="text/javascript"> window.onload = alertName; </script>
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+
 
