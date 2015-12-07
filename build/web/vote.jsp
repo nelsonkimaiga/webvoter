@@ -1,3 +1,10 @@
+<%-- 
+    Document   : vote
+    Created on : Dec 7, 2015, 11:52:03 AM
+    Author     : kimaiga
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,6 +23,14 @@
     <!-- JavaScript  -->
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="js/modernizr.js"></script>
+  
+  <!--pop-up message-->
+  <script type="text/javascript">
+function alertName(){
+alert("You're verified!");
+} 
+</script>
+
 <body>
 <!-- container div -->
 <div id="wrapper">
@@ -37,10 +52,6 @@
 
 <br>
 
-<!-- voting button -->
-<div id="vote-btn">
-  <a href="#" role="button" class="btn btn-primary btn-large">Click to start Voting<i class="fa fa-check"></i></a>
-</div>
 <div class="container">
 <!-- image placeholders  -->
 <div class="row">
@@ -107,6 +118,7 @@
 <br>
 <!-- Vote serial id textbox -->
 <div class="row">
+ <div class=".col-md-6">
   <form class="form-inline">
   <div class="form-group">
     <label for="VoteSerial">Vote Serial Number:</label>
@@ -114,13 +126,16 @@
   </div>
 </form>
 </div>
+</div>
 
 <button type="button" class="btn btn-primary">Vote</button>
 
   </div>
 </div>
 <!--</div>-->
+<script type="text/javascript"> window.onload = alertName; </script>
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+

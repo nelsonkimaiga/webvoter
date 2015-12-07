@@ -94,7 +94,7 @@ public class VerifyVoter extends HttpServlet {
              st = conn.prepareStatement(sql);
 //            verification_table.setModel(DbUtils.resultSetToTableModel(rs));
 //            start_voting_button_.setVisible(true);
-out.println("<h3>You are verified!</h3>");
+//out.println("<h3>You are verified!</h3>");
             } 
             
             else {
