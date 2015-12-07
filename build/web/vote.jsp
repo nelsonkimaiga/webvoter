@@ -48,13 +48,10 @@
 <br>
 
 <div class="container">
-<!-- image place-holders  -->
 <div class="row">
-  <!-- applying the four-column grid system -->
-  <!-- grid 1 -->
   <!--<div class="col-xs-6 col-sm-3">-->
   <!-- drop-down menu populates with election candidates from the database-->
-  <form action="SavePresident" method="POST" class="form-inline">
+  <form action="VoteForCandidate" method="POST" class="form-inline">
       <!--Presidential drop-down-->
       <select class="form-control" name="president">
         <option value="Uhuru_kenyatta">Uhuru Kenyatta</option>
@@ -76,27 +73,30 @@
           <option value="waititu">Ferdinand Waititu</option>
       </select>
       
-     <button type="submit" class="btn btn-primary">Vote</button>
-      
-  </form>   
+      <button type="submit" class="btn-primary">Vote</button>
+  </form>
 </div>
 <!-- end of row -->
 </div>
 
 <br>
-<!-- Vote serial id textbox -->
-<div class="row">
- <div class=".col-md-6">
-  <form class="form-inline">
-  <div class="form-group">
-    <label for="VoteSerial">Vote Serial Number:</label>
-    <input type="text" class="form-control" id="voteserial">
-  </div>
-</form>
-</div>
-</div>
 
-<!--<button type="button" class="btn btn-primary">Vote</button>-->
+<!--Voter serial field(self-populated)-->
+  <form class="form-inline" action="" method="GET">
+   <div class="form-group">
+    <label for="idNumber">VOTE SERIAL NUMBER:</label>
+     <input type="text" name="voter_serial" class="form-control" id="voterserial" value='<%=("VT"+(int)(Math.random()*10000))%>'/>
+    </div>
+  </form>
+
+
+
+
+
+
+
+
+
 
   </div>
 </div>

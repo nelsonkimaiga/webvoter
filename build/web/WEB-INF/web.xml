@@ -6,7 +6,7 @@
     </servlet>
     <servlet>
         <servlet-name>SavePresident</servlet-name>
-        <servlet-class>Scripts.SavePresident</servlet-class>
+        <servlet-class>Scripts.VoteForCandidate</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>VerifyVoter</servlet-name>

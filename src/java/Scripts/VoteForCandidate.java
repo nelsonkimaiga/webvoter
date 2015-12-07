@@ -15,12 +15,13 @@ import java.sql.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.util.logging.*;
 
 /**
  *
  * @author kimaiga
  */
-public class SavePresident extends HttpServlet {
+public class VoteForCandidate extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,16 +40,20 @@ public class SavePresident extends HttpServlet {
 //            out.println("<!DOCTYPE html>");
 //            out.println("<html>");
 //            out.println("<head>");
-//            out.println("<title>Servlet SavePresident</title>");            
+//            out.println("<title>Servlet VoteForCandidate</title>");            
 //            out.println("</head>");
 //            out.println("<body>");
-//            out.println("<h1>Servlet SavePresident at " + request.getContextPath() + "</h1>");
+//            out.println("<h1>Servlet VoteForCandidate at " + request.getContextPath() + "</h1>");
 //            out.println("</body>");
 //            out.println("</html>");
 //        }
 
 //form data
              String president = request.getParameter("president");
+             String mp = request.getParameter("mp");
+             String governor = request.getParameter("governor");
+             String councillor = request.getParameter("councillor");
+             String serial = request.getParameter("voter_serial");
              
     Connection conn= null;
     String url = "jdbc:mysql://localhost/";
@@ -73,13 +78,20 @@ public class SavePresident extends HttpServlet {
 	            }
 //save the data
               try {
-            String sql = "INSERT INTO test (president) VALUES ('" +president+"')";
+            String sql = "INSERT INTO test (president, mp, governor, councillor, serial_no) VALUES ('" +president+"','" +mp+"','" +governor+"','" +councillor+"', '"+serial+"')";
 	              st.execute(sql);
-                      out.println("<h4>Yaay!</h4>");
+                      out.println("<h4>Yaay you have voted!</h4>");
         } catch (Exception e) {
             out.println("<h3>Error!.</h3>");
         }
 
+              
+              
+              
+              
+              
+              
+              
 
     }
 
