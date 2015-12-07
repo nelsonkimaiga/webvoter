@@ -54,14 +54,29 @@
   <!-- grid 1 -->
   <!--<div class="col-xs-6 col-sm-3">-->
   <!-- drop-down menu populates with election candidates from the database-->
-  <form action="SavePresident" method="POST">
+  <form action="SavePresident" method="POST" class="form-inline">
       <!--Presidential drop-down-->
       <select class="form-control" name="president">
         <option value="Uhuru_kenyatta">Uhuru Kenyatta</option>
         <option value="Raila">Raila Amolo Odinga</option>
         <option value="Ruto">William Ruto</option>
      </select>
-      <button type="submit" class="btn btn-primary">Vote</button>
+      <!--MP drop-down-->
+      <select class="form-control" name="mp">
+          <option value="sonko">Mbuvi Sonko</option>
+          <option value="waititu">Ferdinand Waititu</option>
+      </select>
+      <!--Governor-->
+      <select class="form-control" name="governor">
+          <option value="kidero">Evans Kidero</option>
+      </select>
+      <!--MCA-->
+       <select class="form-control" name="councillor">
+          <option value="sonko">Mbuvi Sonko</option>
+          <option value="waititu">Ferdinand Waititu</option>
+      </select>
+      
+     <button type="submit" class="btn btn-primary">Vote</button>
       
   </form>   
 </div>
