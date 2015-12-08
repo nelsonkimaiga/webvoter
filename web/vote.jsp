@@ -82,7 +82,7 @@
 <br>
 
 <!--Voter serial field(self-populated)-->
-  <form class="form-inline" action="" method="GET">
+  <form class="form-inline" action="VoteForCandidate" method="POST">
    <div class="form-group">
     <label for="idNumber">VOTE SERIAL NUMBER:</label>
      <input type="text" name="voter_serial" class="form-control" id="voterserial" value='<%=("VT"+(int)(Math.random()*10000))%>'/>
