@@ -112,7 +112,7 @@ String councillor = request.getParameter("councillor");
                            
 
         } catch(Exception exp){
-            out.println("<h3>Cannot connect to the database,check network settings.</h3>");          
+           out.println(exp.getMessage());          
         }
         
         
@@ -129,7 +129,7 @@ String councillor = request.getParameter("councillor");
         out.println("You have voted!");
             }
         catch(Exception exp){
-            
+            out.println(exp.getMessage());
         }    
         }        
         
