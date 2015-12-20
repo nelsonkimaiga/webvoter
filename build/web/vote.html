@@ -26,7 +26,7 @@ and open the template in the editor.
     <div id="wrapper">
      <div class="container">
         <!-- Verification form and voting section -->
-        <form action="" method="" name="VotingForm" autocomplete="off" class="form-inline">
+        <form action="vote" method="POST" name="VotingForm" autocomplete="off" class="form-inline">
         <h3>Voter Verification</h3>
 
         <br>
@@ -45,7 +45,7 @@ and open the template in the editor.
             <br>
 <h3>Proceed to Start Voting</h3>
            <label for="pres">President</label>
-			<select class="form-control" name="president">
+		<select class="form-control" name="president">
         		<option value="Uhuru_kenyatta">Uhuru Kenyatta</option>
         		<option value="Raila">Raila Amolo Odinga</option>
         		<option value="Ruto">William Ruto</option>
@@ -76,7 +76,7 @@ and open the template in the editor.
      	<br>     		
      		<div class="form-goup">
      		<label for="pres">Vote Serial Number</label>
-     		<input type="text" class="form-control" id="voteserial" name="vote_serial">	
+     		<input type="text" class="form-control" id="voteserial" name="vote_serial" value="">	
      		</div>
      	<br>
      	  <button type="submit" class="btn-primary">Cast Vote</button>	     		
@@ -85,6 +85,10 @@ and open the template in the editor.
 
         </form>
      </div>
-    </div>     
+    </div>
+        <script type="text/javascript">
+            onload();
+          window.alert("Thanks for Visiting!");
+        </script>       
     </body>
 </html>

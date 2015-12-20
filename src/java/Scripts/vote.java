@@ -5,23 +5,27 @@
  */
 package Scripts;
 
+import java.awt.Color;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.sql.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import javax.servlet.http.HttpSession;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author kimaiga
  */
-public class VerifyVoter extends HttpServlet {
+public class vote extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,22 +37,21 @@ public class VerifyVoter extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-//            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet VerifyVoter</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet VerifyVoter at " + request.getContextPath() + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-//        }
-
-
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet vote</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet vote at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+        
+    
 //Database connection variables
     Connection conn= null;
     String url = "jdbc:mysql://localhost/";
@@ -59,7 +62,7 @@ public class VerifyVoter extends HttpServlet {
     Statement st = null;
     ResultSet rs;
 
-    //attmept to connect to db
+//attmept to connect to db
              try{
 	       Class.forName(driver);
 
@@ -70,19 +73,29 @@ public class VerifyVoter extends HttpServlet {
 	            }
 	            catch(Exception exp){
 	              out.println("<h3>Cannot connect to the database,check network settings.</h3>");
-	            }
-             
-          //get input form data
-          String idnumber=request.getParameter("id_number");
-          
-          //check for ID Number in DB
-          String sql = "Select id_no,s_name,m_name,m_name,gender,voter_id,ward,	constituency,county,poll_center	 from registration where id_no ='"+idnumber+"'";
-          
-            try{
+	            }    
+//voter verification
+String idnumber = request.getParameter("id_number");
+String voterid = request.getParameter("voter_id");
+String voteserial = request.getParameter("voter_serial");
+String president = request.getParameter("president");
+String mp = request.getParameter("mp");
+String governor = request.getParameter("governor");
+String councillor = request.getParameter("councillor");
+
+
+
+        if (idnumber.equals("")||voterid.equals("")){
+  out.println("<h3>Cannot verify you, check your fields again.</h3>");
+}
+        else{
+              String sql = "Select id_no,s_name,m_name,m_name,gender,voter_id,ward, constituency,county,poll_center from registration where id_no ='"+idnumber+"' and voter_id ='"+voterid+"'";
+
+        try{
             int c=0;
             rs = st.executeQuery(sql);
+            out.println("<h1>Registered!</h1>");            
             st = conn.prepareStatement(sql);
-             
                   while(rs.next()){
                     c++;
                     }
@@ -94,22 +107,33 @@ public class VerifyVoter extends HttpServlet {
             } 
             
             else {
-//                 JOptionPane.showMessageDialog(null, "<html><b><font color=red>NOT REGISTERED</font><br/>ID Number: <font color=red>"+id+"</font></html>\n<html><b>Voter ID : <font color=red>"+vid+"<br/> </html>","Information",JOptionPane.INFORMATION_MESSAGE );
+                 out.println("<html><b><font color=red>NOT REGISTERED</font><br/>ID Number: <font color=red>"+idnumber+"</font></html>\n<html><b>Voter ID : <font color=red>"+voterid+"<br/> </html>");
             }
                            
 
         } catch(Exception exp){
             out.println("<h3>Cannot connect to the database,check network settings.</h3>");          
         }
-      
-            
-            
-            
-            
-            
-    }
+        
+        
+        }         
+//voting
+        if (president.equals("")||mp.equals("")||councillor.equals("")||governor.equals("")){
+  out.println("<h3>Kindly make selection in all fields!.</h3>");
+}
 
-    public VerifyVoter() {
+        else{
+            try{
+        String sql = "INSERT into test VALUES("+"'"+president+"'," +"'"+mp+"',"+"'"+councillor+"',"+"'"+governor+"')" ;
+        st.executeQuery(sql);
+        out.println("You have voted!");
+            }
+        catch(Exception exp){
+            
+        }    
+        }        
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -124,7 +148,11 @@ public class VerifyVoter extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(vote.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
     }
 
@@ -139,7 +167,11 @@ public class VerifyVoter extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        try {
+            processRequest(request, response);
+        } catch (SQLException ex) {
+            Logger.getLogger(vote.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**

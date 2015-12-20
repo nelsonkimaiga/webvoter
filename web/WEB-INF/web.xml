@@ -8,6 +8,10 @@
         <servlet-name>SavePresident</servlet-name>
         <servlet-class>Scripts.VoteForCandidate</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>vote</servlet-name>
+        <servlet-class>Scripts.vote</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>VerifyVoter</servlet-name>
         <url-pattern>/VerifyVoter</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>SavePresident</servlet-name>
         <url-pattern>/SavePresident</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>vote</servlet-name>
+        <url-pattern>/vote</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
