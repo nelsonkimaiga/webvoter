@@ -15,14 +15,14 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Scanner;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -80,7 +80,7 @@ public class vote extends HttpServlet {
 //voter verification
 String idnumber = request.getParameter("id_number");
 String voterid = request.getParameter("voter_id");
-String voteserial = request.getParameter("voter_serial");
+String voteserial []= request.getParameterValues("vote_serial");
 String president = request.getParameter("president");
 String mp = request.getParameter("mp");
 String governor = request.getParameter("governor");
@@ -97,7 +97,7 @@ String councillor = request.getParameter("councillor");
         try{
             int c=0;
             rs = st.executeQuery(sql);
-            out.println("<h1>Registered!</h1>");            
+            out.println("<h1>Registered!</h1>");
             st = conn.prepareStatement(sql);
                   while(rs.next()){
                     c++;
@@ -127,7 +127,7 @@ String councillor = request.getParameter("councillor");
 
     else{
         try{
-        String sql = "INSERT into test VALUES("+"'"+president+"'," +"'"+mp+"',"+"'"+councillor+"',"+"'"+governor+"')" ;
+        String sql = "INSERT into test VALUES('"+Arrays.toString(voteserial)+"','"+president+"','"+mp+"','"+councillor+"','"+governor+"')" ;
         st.execute(sql);
         out.println("You have voted!");
         }
@@ -172,32 +172,12 @@ String councillor = request.getParameter("councillor");
             throws ServletException, IOException {
         try {
             processRequest(request, response);
+            
+            
         } catch (SQLException ex) {
             Logger.getLogger(vote.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-String voteserial=request.getParameter("vote_serial");
-try {
-         File file = new File(voteserial);
-         Scanner scanner = new Scanner(file);
-         while (scanner.hasNextLine()) {
-           if(voteserial==null)
-          {
-           voteserial=scanner.nextLine();
-          }
-          else
-        {
-           voteserial=voteserial + " "+scanner.nextLine();
-
-        }
-}
-             scanner.close();
-           } catch (FileNotFoundException e) {
-             e.printStackTrace();
-           }
-
-request.setAttribute("VT",Math.random()*10000);
-
 }        
         
 //    }

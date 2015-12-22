@@ -53,28 +53,28 @@ and open the template in the editor.
 <h3>Proceed to Start Voting</h3>
            <label for="pres">President</label>
 		<select class="form-control" name="president">
-        		<option value="Uhuru_kenyatta">Uhuru Kenyatta</option>
+        		<option value="uhuru">Uhuru Kenyatta</option>
         		<option value="Raila">Raila Amolo Odinga</option>
         		<option value="Ruto">William Ruto</option>
      		</select>
 
      	<label for="gov">Governor</label>
      		<select class="form-control" name="governor">
-        		<option value="Uhuru_kenyatta">Evans Kidero</option>
+        		<option value="kidero">Evans Kidero</option>
         		<option value=""></option>
         		<option value=""></option>
      		</select>
 
      	<label for="mp">MP</label>
      		<select class="form-control" name="mp">
-        		<option value="Uhuru_kenyatta">Gideon Mbuvi</option>
+        		<option value="mbuvi">Gideon Mbuvi</option>
         		<option value=""></option>
         		<option value=""></option>
      		</select>
 
      	<label for="councillor">Councillor</label>	
      		<select class="form-control" name="councillor">
-        		<option value="Uhuru_kenyatta">William Kabogo</option>
+        		<option value="kabogo">William Kabogo</option>
         		<option value=""></option>
         		<option value=""></option>
      		</select>
