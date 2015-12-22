@@ -6,6 +6,8 @@
 package Scripts;
 
 import java.awt.Color;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -13,6 +15,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -122,16 +125,16 @@ String councillor = request.getParameter("councillor");
   out.println("<h3>Kindly make selection in all fields!.</h3>");
 }
 
-        else{
-            try{
+    else{
+        try{
         String sql = "INSERT into test VALUES("+"'"+president+"'," +"'"+mp+"',"+"'"+councillor+"',"+"'"+governor+"')" ;
-        st.executeQuery(sql);
+        st.execute(sql);
         out.println("You have voted!");
-            }
+        }
         catch(Exception exp){
             out.println(exp.getMessage());
         }    
-        }        
+    }        
         
         
     }
@@ -172,7 +175,32 @@ String councillor = request.getParameter("councillor");
         } catch (SQLException ex) {
             Logger.getLogger(vote.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+        
+String voteserial=request.getParameter("vote_serial");
+try {
+         File file = new File(voteserial);
+         Scanner scanner = new Scanner(file);
+         while (scanner.hasNextLine()) {
+           if(voteserial==null)
+          {
+           voteserial=scanner.nextLine();
+          }
+          else
+        {
+           voteserial=voteserial + " "+scanner.nextLine();
+
+        }
+}
+             scanner.close();
+           } catch (FileNotFoundException e) {
+             e.printStackTrace();
+           }
+
+request.setAttribute("VT",Math.random()*10000);
+
+}        
+        
+//    }
 
     /**
      * Returns a short description of the servlet.

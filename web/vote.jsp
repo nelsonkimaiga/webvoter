@@ -1,3 +1,10 @@
+<%-- 
+    Document   : vote
+    Created on : Dec 22, 2015, 12:15:06 PM
+    Author     : kimaiga
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -76,7 +83,7 @@ and open the template in the editor.
      	<br>     		
      		<div class="form-goup">
      		<label for="pres">Vote Serial Number</label>
-     		<input type="text" class="form-control" id="voteserial" name="vote_serial" value="">	
+     		<input type="text" class="form-control" id="voteserial" name="vote_serial" value='<%="VT"+(int)(Math.random()*10000)%>'>	
      		</div>
      	<br>
      	  <button type="submit" class="btn-primary">Cast Vote</button>	     		
@@ -86,9 +93,10 @@ and open the template in the editor.
         </form>
      </div>
     </div>
-        <script type="text/javascript">
+<!--        <script type="text/javascript">
             onload();
           window.alert("Thanks for Visiting!");
-        </script>       
+        </script>       -->
     </body>
 </html>
+
