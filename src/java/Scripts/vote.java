@@ -121,7 +121,7 @@ String councillor = request.getParameter("councillor");
         
         }         
 //voting
-        if (president.equals("")||mp.equals("")||councillor.equals("")||governor.equals("")){
+        if (voteserial.equals("")||president.equals("")||mp.equals("")||councillor.equals("")||governor.equals("")){
   out.println("<h3>Kindly make selection in all fields!.</h3>");
 }
 

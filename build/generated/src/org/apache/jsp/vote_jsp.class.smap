@@ -1,0 +1,14 @@
+SMAP
+vote_jsp.java
+JSP
+*S JSP
+*F
++ 0 vote.jsp
+vote.jsp
+*L
+5,28:44
+33:72,3
+34,58:75
+92:133,3
+93,11:136
+*E

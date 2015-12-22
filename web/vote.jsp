@@ -28,6 +28,12 @@ and open the template in the editor.
   	<!-- JavaScript  -->
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="js/modernizr.js"></script>
+  <script type="text/javascript"><!--
+      function init(){
+        alert('<%="Error"%>');
+        window.location.replace('javascript:""');
+      }
+    //--></script>
 </head>
     <body>
     <div id="wrapper">
@@ -47,7 +53,7 @@ and open the template in the editor.
                <label for="voterid">Voter ID</label>
                <input type="text" class="form-control" id="VoterID" name="voter_id" placeholder="Voter ID">
             </div>
-            <button type="submit" class="btn-primary">Verify</button>
+            <button type="submit" class="btn-primary" onclick="init();">Verify</button>
 
             <br>
 <h3>Proceed to Start Voting</h3>
@@ -86,17 +92,11 @@ and open the template in the editor.
      		<input type="text" class="form-control" id="voteserial" name="vote_serial" value='<%="VT"+(int)(Math.random()*10000)%>'>	
      		</div>
      	<br>
-     	  <button type="submit" class="btn-primary">Cast Vote</button>	     		
+        <button type="submit" class="btn-primary">Cast Vote</button>
      	</div>
-
-
         </form>
      </div>
-    </div>
-<!--        <script type="text/javascript">
-            onload();
-          window.alert("Thanks for Visiting!");
-        </script>       -->
+    </div>               
     </body>
 </html>
 
