@@ -28,12 +28,6 @@ and open the template in the editor.
   	<!-- JavaScript  -->
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="js/modernizr.js"></script>
-  <script type="text/javascript"><!--
-      function init(){
-        alert('<%="Error"%>');
-        window.location.replace('javascript:""');
-      }
-    //--></script>
 </head>
     <body>
     <div id="wrapper">
@@ -53,7 +47,7 @@ and open the template in the editor.
                <label for="voterid">Voter ID</label>
                <input type="text" class="form-control" id="VoterID" name="voter_id" placeholder="Voter ID">
             </div>
-            <button type="submit" class="btn-primary" onclick="init();">Verify</button>
+            <button type="submit" class="btn-primary">Verify</button>
 
             <br>
 <h3>Proceed to Start Voting</h3>
@@ -96,7 +90,7 @@ and open the template in the editor.
      	</div>
         </form>
      </div>
-    </div>               
+    </div>              
     </body>
 </html>
 
