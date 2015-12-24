@@ -43,17 +43,6 @@ public class vote extends HttpServlet {
             throws ServletException, IOException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
-            /* TODO output your page here. You may use following sample code. */
-//            out.println("<!DOCTYPE html>");
-//            out.println("<html>");
-//            out.println("<head>");
-//            out.println("<title>Servlet vote</title>");            
-//            out.println("</head>");
-//            out.println("<body>");
-//            out.println("<h1>Servlet vote at " + request.getContextPath() + "</h1>");
-//            out.println("</body>");
-//            out.println("</html>");
-    
 //Database connection variables
     Connection conn= null;
     String url = "jdbc:mysql://localhost/";
@@ -88,8 +77,9 @@ String councillor = request.getParameter("councillor");
 
 
         if (idnumber.equals("")||voterid.equals("")){
+
 out.print("<html><head>");
-out.print("<script type=\"text/javascript\">window.alert(\"Empty Fields!\");</script>");
+out.print("<script type=\"text/javascript\">window.alert(\"ERROR: INPUT FIELDS EMPTY\");</script>");
 out.print("</head><body></body></html>");
 }
         else{
@@ -99,7 +89,7 @@ out.print("</head><body></body></html>");
             int c=0;
             rs = st.executeQuery(sql);
            out.print("<html><head>");
-           out.print("<script type=\"text/javascript\">window.alert(\"Empty Fields!\");</script>");
+           out.print("<script type=\"text/javascript\">window.alert(\"YOU ARE VERIFIED!\");</script>");
            out.print("</head><body></body></html>");
             st = conn.prepareStatement(sql);
                   while(rs.next()){
@@ -124,21 +114,23 @@ out.print("</head><body></body></html>");
         
         }         
 //voting
+//validation
         if (voteserial.equals("")||president.equals("")||mp.equals("")||councillor.equals("")||governor.equals("")){
-//  out.println("<h3>Kindly make selection in all fields!.</h3>");
+out.print("<html><head>");
+out.print("<script type=\"text/javascript\">window.alert(\"Please Select Candidates in all Categories\");</script>");
+out.print("</head><body></body></html>");
 }
 
     else{
         try{
         String sql = "INSERT into test VALUES('"+Arrays.toString(voteserial)+"','"+president+"','"+mp+"','"+councillor+"','"+governor+"')" ;
         st.execute(sql);
-//        out.println("You have voted!");
+out.print("<html><head>");
+out.print("<script type=\"text/javascript\">window.alert(\"YOU HAVE VOTED!\");</script>");
+out.print("</head><body></body></html>");
         }
         catch(Exception exp){
-//            out.println(exp.getMessage());
- out.print("<html><head>");
-           out.print("<script type=\"text/javascript\">window.alert(\"Empty Fields!\" +exp.getMessage);</script>");
-           out.print("</head><body></body></html>");
+            out.println(exp.getMessage());
         }    
     }        
         
