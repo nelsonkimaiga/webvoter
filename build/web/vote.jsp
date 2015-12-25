@@ -47,47 +47,7 @@ and open the template in the editor.
                <label for="voterid">Voter ID</label>
                <input type="text" class="form-control" id="VoterID" name="voter_id" placeholder="Voter ID">
             </div>
-            <button type="submit" class="btn-primary">Verify</button>
-
-            <br>
-<h3>Proceed to Start Voting</h3>
-           <label for="pres">President</label>
-		<select class="form-control" name="president">
-        		<option value="uhuru">Uhuru Kenyatta</option>
-        		<option value="Raila">Raila Amolo Odinga</option>
-        		<option value="Ruto">William Ruto</option>
-     		</select>
-
-     	<label for="gov">Governor</label>
-     		<select class="form-control" name="governor">
-        		<option value="kidero">Evans Kidero</option>
-        		<option value=""></option>
-        		<option value=""></option>
-     		</select>
-
-     	<label for="mp">MP</label>
-     		<select class="form-control" name="mp">
-        		<option value="mbuvi">Gideon Mbuvi</option>
-        		<option value=""></option>
-        		<option value=""></option>
-     		</select>
-
-     	<label for="councillor">Councillor</label>	
-     		<select class="form-control" name="councillor">
-        		<option value="kabogo">William Kabogo</option>
-        		<option value=""></option>
-        		<option value=""></option>
-     		</select>
-
-     	<div class="form-horizontal">
-     	<br>     		
-     		<div class="form-goup">
-     		<label for="pres">Vote Serial Number</label>
-     		<input type="text" class="form-control" id="voteserial" name="vote_serial" value='<%="VT"+(int)(Math.random()*10000)%>'>	
-     		</div>
-     	<br>
-        <button type="submit" class="btn-primary">Cast Vote</button>
-     	</div>
+            <button type="submit" class="btn btn-default" id="verify" role="button">Verify</button>
         </form>
      </div>
     </div>              

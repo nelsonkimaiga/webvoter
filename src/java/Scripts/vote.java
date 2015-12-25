@@ -103,36 +103,38 @@ out.print("</head><body></body></html>");
             } 
             
             else {
-                 out.println("<html><b><font color=red>NOT REGISTERED</font><br/>ID Number: <font color=red>"+idnumber+"</font></html>\n<html><b>Voter ID : <font color=red>"+voterid+"<br/> </html>");
+           out.print("<html><head>");
+           out.print("<script type=\"text/javascript\">window.alert(\"YOU ARE NOT VERIFIED!\");</script>");
+           out.print("</head><body></body></html>");
             }
                            
 
         } catch(Exception exp){
-           out.println(exp.getMessage());          
+           out.println(exp.getMessage());         
         }
         
         
         }         
 //voting
 //validation
-        if (voteserial.equals("")||president.equals("")||mp.equals("")||councillor.equals("")||governor.equals("")){
-out.print("<html><head>");
-out.print("<script type=\"text/javascript\">window.alert(\"Please Select Candidates in all Categories\");</script>");
-out.print("</head><body></body></html>");
-}
+//         if (voteserial.equals("")||president.equals("")||mp.equals("")||councillor.equals("")||governor.equals("")){
+// out.print("<html><head>");
+// out.print("<script type=\"text/javascript\">window.alert(\"Please Select Candidates in all Categories\");</script>");
+// out.print("</head><body></body></html>");
+// }
 
-    else{
-        try{
-        String sql = "INSERT into test VALUES('"+Arrays.toString(voteserial)+"','"+president+"','"+mp+"','"+councillor+"','"+governor+"')" ;
-        st.execute(sql);
-out.print("<html><head>");
-out.print("<script type=\"text/javascript\">window.alert(\"YOU HAVE VOTED!\");</script>");
-out.print("</head><body></body></html>");
-        }
-        catch(Exception exp){
-            out.println(exp.getMessage());
-        }    
-    }        
+//     else{
+//         try{
+//         String sql = "INSERT into test VALUES('"+Arrays.toString(voteserial)+"','"+president+"','"+mp+"','"+councillor+"','"+governor+"')" ;
+//         st.execute(sql);
+// out.print("<html><head>");
+// out.print("<script type=\"text/javascript\">window.alert(\"YOU HAVE VOTED!\");</script>");
+// out.print("</head><body></body></html>");
+//         }
+//         catch(Exception exp){
+//             out.println(exp.getMessage());
+//         }    
+//     }        
         
         
     }
