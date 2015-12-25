@@ -23,6 +23,7 @@ and open the template in the editor.
   <link href="css/styles.css" rel="stylesheet">
   <!-- font-awsome -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="fonts/font-awesome.min.css">
   <!-- fonts -->
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   	<!-- JavaScript  -->
@@ -32,8 +33,8 @@ and open the template in the editor.
     <body>
     <div id="wrapper">
      <div class="container">
-        <!-- Verification form and voting section -->
-        <form action="vote" method="POST" name="VotingForm" autocomplete="off" class="form-inline">
+        <!-- Verification form-->
+      <form action="vote" method="POST" name="VotingForm" autocomplete="off" class="form-inline">
         <h3>Voter Verification</h3>
 
         <br>
@@ -49,6 +50,50 @@ and open the template in the editor.
             </div>
             <button type="submit" class="btn btn-default" id="verify" role="button">Verify</button>
         </form>
+      <br>
+</div>      
+<!-- voting form -->
+<div class="container">
+<div class="row">
+  <!-- column 1 president -->
+  <div class="col-md-3">
+    <span><h3>President</h3></span>
+    <img src="images/" class="img-circle">
+    <br>
+    <select class="form-control" name="president">
+      <option value="default" selected>Select President</option>
+    </select>
+  </div>
+  <!-- column 2 governor -->
+    <div class="col-md-3">
+    <span><h3>Governor</h3></span>
+    <img src="images/" class="img-circle">
+    <br>
+    <select class="form-control" name="governor">
+      <option value="default" selected>Select Governor</option>
+    </select>
+  </div>
+<!-- column 3 MP -->
+  <div class="col-md-3">
+    <span><h3>Member of Parliament</h3></span>
+    <img src="images/" class="img-circle">
+    <br>
+    <select class="form-control" name="MP">
+      <option value="default" selected>Select MP</option>
+    </select>
+  </div>
+<!-- column 4 councillor -->
+  <div class="col-md-3">
+    <span><h3>County Rep</h3></span>
+    <img src="images/" class="img-circle">
+    <br>
+    <select class="form-control" name="councillor">
+      <option value="default" selected>Select Councillor</option>
+    </select>
+  </div>
+
+</div>
+
      </div>
     </div>              
     </body>

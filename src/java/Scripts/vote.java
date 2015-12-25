@@ -88,9 +88,7 @@ out.print("</head><body></body></html>");
         try{
             int c=0;
             rs = st.executeQuery(sql);
-           out.print("<html><head>");
-           out.print("<script type=\"text/javascript\">window.alert(\"YOU ARE VERIFIED!\");</script>");
-           out.print("</head><body></body></html>");
+            out.print("<script type=\"text/javascript\">window.alert(\"YOU ARE VERIFIED!\");</script>");
             st = conn.prepareStatement(sql);
                   while(rs.next()){
                     c++;
