@@ -34,7 +34,7 @@ and open the template in the editor.
     <div id="wrapper">
      <div class="container">
         <!-- Verification form-->
-      <form action="vote" method="POST" name="VotingForm" autocomplete="off" class="form-inline">
+      <form action="vote" method="POST" name="VerifyForm" autocomplete="off" class="form-inline">
         <h3>Voter Verification</h3>
 
         <br>
@@ -54,7 +54,8 @@ and open the template in the editor.
 </div>      
 <!-- voting form -->
 <div class="container">
-<div class="row">
+<form action="vote" method="POST" name="VotingForm" autocomplete="off" class="form-group">
+ <div class="row">
   <!-- column 1 president -->
   <div class="col-md-3">
     <span><h3>President</h3></span>
@@ -100,7 +101,7 @@ and open the template in the editor.
   <br>
   <button type="submit" class="btn btn-default" id="castvote">Cast Vote</button>
 </div>
-
+</form>
      </div>
     </div>              
     </body>
