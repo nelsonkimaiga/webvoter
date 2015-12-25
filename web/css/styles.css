@@ -161,3 +161,12 @@ position: relative;
     text-indent: 100%;
     background: url("../images/arrow.png") no-repeat 0px 0px;
 }
+
+#serial{
+    margin-top: 108px;
+}
+
+#castvote{
+    font-size: 15px;
+    color: green;
+}
