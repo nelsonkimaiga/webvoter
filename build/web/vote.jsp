@@ -34,7 +34,7 @@ and open the template in the editor.
     <div id="wrapper">
      <div class="container">
         <!-- Verification form-->
-      <form action="vote" method="POST" name="VerifyForm" autocomplete="off" class="form-inline">
+      <form action="VerifyVoter" method="POST" name="VerifyForm" autocomplete="off" class="form-inline">
         <h3>Voter Verification</h3>
 
         <br>
@@ -54,12 +54,12 @@ and open the template in the editor.
 </div>      
 <!-- voting form -->
 <div class="container">
-<form action="vote" method="POST" name="VotingForm" autocomplete="off" class="form-group">
+<form action="Vote" method="POST" name="VotingForm" autocomplete="off" class="form-group">
  <div class="row">
   <!-- column 1 president -->
   <div class="col-md-3">
     <span><h3>President</h3></span>
-    <img src="images/" class="img-circle">
+    <img src="images/" class="img-rounded">
     <br>
     <select class="form-control" name="president">
       <option value="default" selected>Select President</option>
@@ -68,7 +68,7 @@ and open the template in the editor.
   <!-- column 2 governor -->
     <div class="col-md-3">
     <span><h3>Governor</h3></span>
-    <img src="images/" class="img-circle">
+    <img src="images/" class="img-rounded">
     <br>
     <select class="form-control" name="governor">
       <option value="default" selected>Select Governor</option>
@@ -77,7 +77,7 @@ and open the template in the editor.
 <!-- column 3 MP -->
   <div class="col-md-3">
     <span><h3>Member of Parliament</h3></span>
-    <img src="images/" class="img-circle">
+    <img src="images/" class="img-rounded">
     <br>
     <select class="form-control" name="MP">
       <option value="default" selected>Select MP</option>
@@ -86,7 +86,7 @@ and open the template in the editor.
 <!-- column 4 councillor -->
   <div class="col-md-3">
     <span><h3>County Rep</h3></span>
-    <img src="images/" class="img-circle">
+    <img src="images/" class="img-rounded">
     <br>
     <select class="form-control" name="councillor">
       <option value="default" selected>Select Councillor</option>

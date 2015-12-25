@@ -10,7 +10,11 @@
     </servlet>
     <servlet>
         <servlet-name>vote</servlet-name>
-        <servlet-class>Scripts.vote</servlet-class>
+        <servlet-class>Scripts.VerifyVoter</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Vote</servlet-name>
+        <servlet-class>Scripts.Vote</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>VerifyVoter</servlet-name>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>vote</servlet-name>
         <url-pattern>/vote</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Vote</servlet-name>
+        <url-pattern>/Vote</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
