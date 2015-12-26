@@ -63,7 +63,7 @@ String mp = request.getParameter("mp");
 String governor = request.getParameter("governor");
 String councillor = request.getParameter("councillor");
 
-if (voteserial.equals("")||president.equals("")||mp.equals("")||councillor.equals("")||governor.equals("")){
+if (voteserial.equals("")||president.equals("default")||mp.equals("default")||councillor.equals("default")||governor.equals("default")){
 out.print("<html><head>");
 out.print("<script type=\"text/javascript\">window.alert(\"Please Select Candidates in all Categories\");</script>");
 out.print("</head><body></body></html>");

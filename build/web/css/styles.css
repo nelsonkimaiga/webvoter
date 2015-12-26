@@ -1,7 +1,8 @@
 html,
 body {
     font-family: 'Raleway', serif;
-    background:  #2a2d38;
+    /*background:  #2a2d38;*/
+    background: grey;
     color: #666;
     text-align: center;
     font-weight: 300;
