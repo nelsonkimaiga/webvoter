@@ -63,16 +63,17 @@ String mp = request.getParameter("mp");
 String governor = request.getParameter("governor");
 String councillor = request.getParameter("councillor");
 
-//if (voteserial.equals("")||president.equals("")||mp.equals("")||councillor.equals("")||governor.equals("")){
-//out.print("<html><head>");
-//out.print("<script type=\"text/javascript\">window.alert(\"Please Select Candidates in all Categories\");</script>");
-//out.print("</head><body></body></html>");
-//}
+if (voteserial.equals("")||president.equals("")||mp.equals("")||councillor.equals("")||governor.equals("")){
+out.print("<html><head>");
+out.print("<script type=\"text/javascript\">window.alert(\"Please Select Candidates in all Categories\");</script>");
+out.print("</head><body></body></html>");
+}
 
 //    else{
         try{
         String sql = "INSERT into test VALUES('"+Arrays.toString(voteserial)+"','"+president+"','"+mp+"','"+councillor+"','"+governor+"')" ;
         st.execute(sql);
+        conn.createStatement();
 out.print("<html><head>");
 out.print("<script type=\"text/javascript\">window.alert(\"YOU HAVE VOTED!\");</script>");
 out.print("</head><body></body></html>");

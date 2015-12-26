@@ -68,7 +68,7 @@ and open the template in the editor.
   <!-- column 2 governor -->
     <div class="col-md-3">
     <span><h3>Governor</h3></span>
-    <img src="images/" class="img-rounded">
+    <img src="" class="img-rounded">
     <br>
     <select class="form-control" name="governor">
       <option value="default" selected>Select Governor</option>
@@ -77,7 +77,7 @@ and open the template in the editor.
 <!-- column 3 MP -->
   <div class="col-md-3">
     <span><h3>Member of Parliament</h3></span>
-    <img src="images/" class="img-rounded">
+    <img src="" class="img-rounded">
     <br>
     <select class="form-control" name="MP">
       <option value="default" selected>Select MP</option>
@@ -86,7 +86,7 @@ and open the template in the editor.
 <!-- column 4 councillor -->
   <div class="col-md-3">
     <span><h3>County Rep</h3></span>
-    <img src="images/" class="img-rounded">
+    <img src="" class="img-rounded">
     <br>
     <select class="form-control" name="councillor">
       <option value="default" selected>Select Councillor</option>
