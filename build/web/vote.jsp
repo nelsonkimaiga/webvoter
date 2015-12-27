@@ -55,18 +55,18 @@ and open the template in the editor.
 <!-- voting form -->
 <div class="container">
 <form action="Vote" method="POST" name="VotingForm" autocomplete="off" class="form-group">
- <div class="row">
+<div class="row">
   <!-- column 1 president -->
   <div class="col-md-3">
     <span><h3>President</h3></span>
-    <img src="images/" class="img-rounded">
+    <img src="" class="img-rounded">
     <br>
     <select class="form-control" name="president">
       <option value="default" selected>Select President</option>
     </select>
   </div>
   <!-- column 2 governor -->
-    <div class="col-md-3">
+  <div class="col-md-3">
     <span><h3>Governor</h3></span>
     <img src="" class="img-rounded">
     <br>
@@ -96,14 +96,15 @@ and open the template in the editor.
 
   <div class="form-inline" id="serial">
         <label for="pres">Vote Serial Number</label>
-        <input type="text" class="form-control" id="voteserial" name="vote_serial" value='<%="VT"+(int)(Math.random()*10000)%>'>  
+        <input type="text" class="form-control" id="voteserial" name="vote_serial"  value='<%="VT"+(int)(Math.random()*10000)%>'>
   </div>
   <br>
   <button type="submit" class="btn btn-default" id="castvote">Cast Vote</button>
 </div>
 </form>
      </div>
-    </div>              
+    </div>
+<script src="js/ajax.js"></script>                  
     </body>
 </html>
 

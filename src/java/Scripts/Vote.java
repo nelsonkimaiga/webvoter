@@ -69,7 +69,7 @@ out.print("<script type=\"text/javascript\">window.alert(\"Please Select Candida
 out.print("</head><body></body></html>");
 }
 
-//    else{
+else{
         try{
         String sql = "INSERT into test VALUES('"+Arrays.toString(voteserial)+"','"+president+"','"+mp+"','"+councillor+"','"+governor+"')" ;
         st.execute(sql);
@@ -81,7 +81,7 @@ out.print("</head><body></body></html>");
         catch(Exception exp){
             out.println(exp.getMessage());
         }    
-//    } 
+   } 
     
     
     
