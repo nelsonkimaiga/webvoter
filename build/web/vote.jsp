@@ -96,7 +96,7 @@ and open the template in the editor.
 
   <div class="form-inline" id="serial">
         <label for="pres">Vote Serial Number</label>
-        <input type="text" class="form-control" id="voteserial" name="vote_serial"  value='<%="VT"+(int)(Math.random()*10000)%>'>
+        <input type="text" class="form-control" id="voteserial" name="vote_serial"  value='<%="VT"+(int)(Math.random()*10000)%>' readonly>
   </div>
   <br>
   <button type="submit" class="btn btn-default" id="castvote">Cast Vote</button>
