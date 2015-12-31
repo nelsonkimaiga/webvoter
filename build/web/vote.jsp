@@ -29,6 +29,34 @@ and open the template in the editor.
   	<!-- JavaScript  -->
   <script src="js/jquery-1.11.3.min.js"></script>
   <script src="js/modernizr.js"></script>
+  
+  <!-- Form validation -->
+  <script type="text/javascript">
+function MM_findObj(n, d) {
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_validateForm() {
+  var i,p,q,nm,test,num,min,max,errors='',args=MM_validateForm.arguments;
+  for (i=0; i<(args.length-2); i+=3) { test=args[i+2]; val=MM_findObj(args[i]);
+    if (val) { nm=val.name; if ((val=val.value)!="") {
+      if (test.indexOf('isEmail')!=-1) { p=val.indexOf('@');
+        if (p<1 || p==(val.length-1)) errors+='- '+nm+' .\n';
+      } else if (test!='R') { num = parseFloat(val);
+        if (isNaN(val)) errors+='- '+nm+' must contain a number.\n';
+        if (test.indexOf('inRange') != -1) { p=test.indexOf(':');
+          min=test.substring(8,p); max=test.substring(p+1);
+          if (num<min || max<num) errors+='- '+nm+' must contain a number between '+min+' and '+max+'.\n';
+    } } } else if (test.charAt(0) == 'R') errors += '- '+nm+' is required.\n'; }
+  } if (errors) alert('The following error(s) occurred:\n'+errors);
+  document.MM_returnValue = (errors == '');
+}
+  </script>
+
 </head>
     <body>
     <div id="wrapper">
@@ -41,14 +69,14 @@ and open the template in the editor.
 
         	<div class="form-group">
                <label for="idcard">ID Card Number</label>
-               <input type="text" class="form-control" id="IDNum" name="id_number" placeholder="ID Card Number">
+               <input type="text" class="form-control validate[required,custom[onlyNumber],length[0,8]]" id="IDNum" name="id_number" placeholder="ID Card Number">
             </div>
 
             <div class="form-group">
                <label for="voterid">Voter ID</label>
-               <input type="text" class="form-control" id="VoterID" name="voter_id" placeholder="Voter ID">
+               <input type="text" class="form-control validate[required,custom[onlyNumber],length[0,8]]" id="VoterID" name="voter_id" placeholder="Voter ID">
             </div>
-            <button type="submit" class="btn btn-default" id="verify" role="button">Verify</button>
+            <button type="submit" class="btn btn-default" id="verify" role="button" onclick="MM_validateForm('id_number','','R','voter_id','','R');return document.MM_returnValue">Verify</button>
         </form>
       <br>
 </div>      

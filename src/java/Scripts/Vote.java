@@ -80,9 +80,12 @@ out.print("</head><body></body></html>");
         }
         catch(Exception exp){
             out.println(exp.getMessage());
-        }    
+        }
+out.print("<html><head>");
+out.print("<script type=\"text/javascript\">document.getElementById(\"output\").innerHTML = \"Please enter a value!\";</script>");
+out.print("</head><body></body></html>");      
    } 
-    
+
     
     
     
