@@ -65,14 +65,6 @@ public class VerifyVoter extends HttpServlet {
 String idnumber = request.getParameter("id_number");
 String voterid = request.getParameter("voter_id");
 
-if (idnumber.equals("")||voterid.equals("")){
-
-out.print("<html><head>");
-out.print("<script type=\"text/javascript\">window.alert(\"ERROR: INPUT FIELDS EMPTY\");</script>");
-out.print("</head><body></body></html>");
-}
-
-else {
 //Attempt to verify the voter
     try{
         String sql = "Select id_no,s_name,m_name,m_name,gender,voter_id,ward, constituency,county,poll_center from registration where id_no ='"+idnumber+"' and voter_id ='"+voterid+"'";
