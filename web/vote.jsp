@@ -17,6 +17,8 @@ and open the template in the editor.
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>E-Voter|Vote</title>
+   <!-- firebase API -->
+   <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
   <!-- Bootstrap -->
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/bootstrap-theme.css" rel="stylesheet">
@@ -56,9 +58,16 @@ function MM_validateForm() {
   document.MM_returnValue = (errors == '');
 }
   </script>
-
+<!--loading icons-->
+<script>
+    $(window).load(function() {
+		// Animate loader off screen
+		$(".se-pre-con").fadeOut("slow");;
+	});
+</script>
 </head>
     <body>
+        <div class="se-pre-con"></div>
     <div id="wrapper">
      <div class="container">
         <!-- Verification form-->
@@ -74,7 +83,7 @@ function MM_validateForm() {
 
             <div class="form-group">
                <label for="voterid">Voter ID</label>
-               <input type="text" class="form-control validate[required,custom[onlyNumber],length[0,8]]" id="VoterID" name="voter_id" placeholder="Voter ID">
+               <input type="text" class="form-control validate[required,custom[onlyNumber],length[0,8]]" id="VoterID" name="voter_id" placeholder="Voter ID" value='<%=request.getParameter("voter_id")%>'>
             </div>
             <button type="submit" class="btn btn-default" id="verify" role="button" onclick="MM_validateForm('id_number','','R','voter_id','','R');return document.MM_returnValue">Verify</button>
         </form>
@@ -82,7 +91,9 @@ function MM_validateForm() {
 </div>      
 <!-- voting form -->
 <div class="container">
-<form action="Vote" method="POST" name="VotingForm" autocomplete="off" class="form-group">
+<form id="voting-form" name="VotingForm" autocomplete="off" class="form-group">
+<p id="contact-success" class="text-success lead"></p>
+<p id="contact-error" class="text-danger lead"></p>
 <div class="row">
   <!-- column 1 president -->
   <div class="col-md-3">
@@ -91,6 +102,7 @@ function MM_validateForm() {
     <br>
     <select class="form-control" name="president">
       <option value="default" selected>Select President</option>
+      <option value="uhurukenyatta">Uhuru Kenyatta</option>
     </select>
   </div>
   <!-- column 2 governor -->
@@ -100,6 +112,7 @@ function MM_validateForm() {
     <br>
     <select class="form-control" name="governor">
       <option value="default" selected>Select Governor</option>
+      <option value="evanskidero">Evans Kidero</option>
     </select>
   </div>
 <!-- column 3 MP -->
@@ -107,8 +120,9 @@ function MM_validateForm() {
     <span><h3>Member of Parliament</h3></span>
     <img src="" class="img-rounded">
     <br>
-    <select class="form-control" name="MP">
+    <select class="form-control" name="mp">
       <option value="default" selected>Select MP</option>
+      <option value="ferdinandwaititu">Ferdinand Waititu</option>
     </select>
   </div>
 <!-- column 4 councillor -->
@@ -118,6 +132,7 @@ function MM_validateForm() {
     <br>
     <select class="form-control" name="councillor">
       <option value="default" selected>Select Councillor</option>
+      <option value="nelsonkimaiga">Nelson Kimaiga</option>
     </select>
   </div>
 <br>
@@ -127,12 +142,43 @@ function MM_validateForm() {
         <input type="text" class="form-control" id="voteserial" name="vote_serial"  value='<%="VT"+(int)(Math.random()*10000)%>' readonly>
   </div>
   <br>
-  <button type="submit" class="btn btn-default" id="castvote">Cast Vote</button>
+  <button type="submit" class="btn btn-default" id="cast-vote">Cast Vote</button>
 </div>
 </form>
      </div>
-    </div>
-<script src="js/ajax.js"></script>                  
+  <!-- processing voting data to firebase-->
+  <script>
+    // Send message
+    var votingForm = document.getElementById('voting-form');
+    var contactSuccess = document.getElementById('contact-success');
+    var contactError = document.getElementById('contact-error');
+    var sendBtn = document.getElementById('send-button');
+    var onMessageComplete = function(error) {
+      sendBtn.disabled = false;
+      if (error) {
+        contactError.innerHTML = 'Sorry. Could not send message.';
+      } else {
+        contactSuccess.innerHTML = "Message has been sent.";
+        // hide the form
+        votingForm.style.display = 'none';
+      }
+    };
+    function sendMessage(formObj) {
+        // Store votes to firebase
+        var myFirebaseRef = new Firebase("https://healthdata.firebaseio.com/messages");
+        myFirebaseRef.push({
+          president: formObj.president.value,
+          governor: formObj.governor.value,
+          mp: formObj.mp.value,
+          councillor: formObj.councillor.value,
+          voteserial: formObj.voteserial.value
+        }, onMessageComplete);
+        sendBtn.disabled = true;
+        return false;
+    }
+</script>
+
+    </div>                
     </body>
 </html>
 
