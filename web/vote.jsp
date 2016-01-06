@@ -1,10 +1,12 @@
-<%-- 
+<%--
     Document   : vote
     Created on : Dec 22, 2015, 12:15:06 PM
     Author     : kimaiga
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*"%>
+<%@page import="java.io.*"%>
+<%@page import="javax.imageio.ImageIO"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -140,9 +142,28 @@ return xmlHttp;
 <p id="contact-error" class="text-danger lead"></p>
 <div class="row">
   <!-- column 1 president -->
-  <div class="col-md-3">
+  <div class=" col-lg-3 col-md-3 col-sm-3">
     <span><h3>President</h3></span>
-    <img src="" class="img-rounded">
+<%
+    String names = request.getParameter("president").toString();
+       String[] devide=names.split(" ") ;
+       String fn=devide[0];
+       String ln=devide[1];
+    
+Class.forName("com.mysql.jdbc.Driver").newInstance();
+
+Connection imageconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/uchaguzi","root","");
+String imagequery = "SELECT Image FROM candidates where Fname ='"+fn+"' and Lname ='"+ln+"'";
+
+Statement imagest = imageconn.createStatement();
+ResultSet imagers = imagest.executeQuery(imagequery);
+while(imagers.next())
+{    
+%>
+    <img src="<%Blob test=imagers.getBlob("image");%>" class="img-rounded">
+ <%; 
+}
+%>
     <br>
     <select class="form-control" name="president">
       <option value="default" selected disabled>Select President</option>
