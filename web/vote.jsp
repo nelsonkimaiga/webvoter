@@ -65,6 +65,50 @@ function MM_validateForm() {
 		$(".se-pre-con").fadeOut("slow");;
 	});
 </script>
+<!--xmlHTTP Request script-->
+<script type="text/javascript"> 
+function showEmp(name){ 
+if(document.getElementById("").value!="-1"){ 
+xmlHttp=GetXmlHttpObject() 
+if (xmlHttp==null){ 
+alert ("Browser does not support HTTP Request") 
+return 
+} 
+var url="getvalue.jsp" 
+url=url+"?name="+name 
+xmlHttp.onreadystatechange=stateChanged 
+xmlHttp.open("GET",url,true) 
+xmlHttp.send(null) 
+} 
+else{ 
+alert("Please Select Employee Id"); 
+} 
+} 
+function stateChanged(){ 
+if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") { 
+var showdata = xmlHttp.responseText; 
+var strar = showdata.split(":"); 
+document.getElementById("no").value= strar[1]; 
+document.getElementById("manager").value= strar[2]; 
+} 
+} 
+
+function GetXmlHttpObject(){ 
+var xmlHttp=null; 
+try{ 
+xmlHttp=new XMLHttpRequest(); 
+} 
+catch (e) { 
+try { 
+xmlHttp=new ActiveXObject("Msxml2.XMLHTTP"); 
+} 
+catch (e) { 
+xmlHttp=new ActiveXObject("Microsoft.XMLHTTP"); 
+} 
+} 
+return xmlHttp; 
+} 
+</script> 
 </head>
     <body>
         <div class="se-pre-con"></div>
@@ -101,7 +145,7 @@ function MM_validateForm() {
     <img src="" class="img-rounded">
     <br>
     <select class="form-control" name="president">
-      <!--<option value="default" selected>Select President</option>-->
+      <option value="default" selected>Select President</option>
       <% 
 Class.forName("com.mysql.jdbc.Driver").newInstance(); 
 
@@ -113,10 +157,11 @@ ResultSet rs = st.executeQuery(query);
 while(rs.next()) 
 { 
 %> 
-<option value="<%=rs.getString("Lname")%>"><%=rs.getString("Fname")+" "+ rs.getString("Lname")%></option> 
+<option value="<%=rs.getString("Fname")+" "+ rs.getString("Lname")%>"><%=rs.getString("Fname")+" "+ rs.getString("Lname")%></option> 
 <% 
-} 
-%> 
+}
+%>
+
     </select>
   </div>
   <!-- column 2 governor -->
@@ -126,7 +171,21 @@ while(rs.next())
     <br>
     <select class="form-control" name="governor">
       <option value="default" selected>Select Governor</option>
-      <option value="evanskidero">Evans Kidero</option>
+            <% 
+Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+
+Connection conn2 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
+String query2 = "select Fname, Lname FROM candidates where post ='governor'"; 
+
+Statement s = conn2.createStatement(); 
+ResultSet rs2 = s.executeQuery(query2); 
+while(rs2.next()) 
+{ 
+%> 
+<option value="<%=rs2.getString("Lname")%>"><%=rs2.getString("Fname")+" "+ rs2.getString("Lname")%></option> 
+<% 
+}
+%>
     </select>
   </div>
 <!-- column 3 MP -->
@@ -136,7 +195,21 @@ while(rs.next())
     <br>
     <select class="form-control" name="mp">
       <option value="default" selected>Select MP</option>
-      <option value="ferdinandwaititu">Ferdinand Waititu</option>
+             <% 
+Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+
+Connection conn3 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
+String query3 = "select Fname, Lname FROM candidates where post ='MP'"; 
+
+Statement s2 = conn3.createStatement(); 
+ResultSet rs3 = s2.executeQuery(query3); 
+while(rs3.next()) 
+{ 
+%> 
+<option value="<%=rs3.getString("Lname")%>"><%=rs3.getString("Fname")+" "+ rs3.getString("Lname")%></option> 
+<% 
+}
+%>
     </select>
   </div>
 <!-- column 4 councillor -->
@@ -146,7 +219,21 @@ while(rs.next())
     <br>
     <select class="form-control" name="councillor">
       <option value="default" selected>Select Councillor</option>
-      <option value="nelsonkimaiga">Nelson Kimaiga</option>
+                   <% 
+Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+
+Connection conn4 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
+String query4 = "select Fname, Lname FROM candidates where post ='MP'"; 
+
+Statement s3 = conn4.createStatement(); 
+ResultSet rs4 = s3.executeQuery(query4); 
+while(rs4.next()) 
+{ 
+%> 
+<option value="<%=rs4.getString("Lname")%>"><%=rs4.getString("Fname")+" "+ rs4.getString("Lname")%></option> 
+<% 
+}
+%>
     </select>
   </div>
 <br>

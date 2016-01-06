@@ -105,6 +105,50 @@ public final class vote_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\t\t$(\".se-pre-con\").fadeOut(\"slow\");;\n");
       out.write("\t});\n");
       out.write("</script>\n");
+      out.write("<!--xmlHTTP Request script-->\n");
+      out.write("<script type=\"text/javascript\"> \n");
+      out.write("function showEmp(name){ \n");
+      out.write("if(document.getElementById(\"\").value!=\"-1\"){ \n");
+      out.write("xmlHttp=GetXmlHttpObject() \n");
+      out.write("if (xmlHttp==null){ \n");
+      out.write("alert (\"Browser does not support HTTP Request\") \n");
+      out.write("return \n");
+      out.write("} \n");
+      out.write("var url=\"getvalue.jsp\" \n");
+      out.write("url=url+\"?name=\"+name \n");
+      out.write("xmlHttp.onreadystatechange=stateChanged \n");
+      out.write("xmlHttp.open(\"GET\",url,true) \n");
+      out.write("xmlHttp.send(null) \n");
+      out.write("} \n");
+      out.write("else{ \n");
+      out.write("alert(\"Please Select Employee Id\"); \n");
+      out.write("} \n");
+      out.write("} \n");
+      out.write("function stateChanged(){ \n");
+      out.write("if (xmlHttp.readyState==4 || xmlHttp.readyState==\"complete\") { \n");
+      out.write("var showdata = xmlHttp.responseText; \n");
+      out.write("var strar = showdata.split(\":\"); \n");
+      out.write("document.getElementById(\"no\").value= strar[1]; \n");
+      out.write("document.getElementById(\"manager\").value= strar[2]; \n");
+      out.write("} \n");
+      out.write("} \n");
+      out.write("\n");
+      out.write("function GetXmlHttpObject(){ \n");
+      out.write("var xmlHttp=null; \n");
+      out.write("try{ \n");
+      out.write("xmlHttp=new XMLHttpRequest(); \n");
+      out.write("} \n");
+      out.write("catch (e) { \n");
+      out.write("try { \n");
+      out.write("xmlHttp=new ActiveXObject(\"Msxml2.XMLHTTP\"); \n");
+      out.write("} \n");
+      out.write("catch (e) { \n");
+      out.write("xmlHttp=new ActiveXObject(\"Microsoft.XMLHTTP\"); \n");
+      out.write("} \n");
+      out.write("} \n");
+      out.write("return xmlHttp; \n");
+      out.write("} \n");
+      out.write("</script> \n");
       out.write("</head>\n");
       out.write("    <body>\n");
       out.write("        <div class=\"se-pre-con\"></div>\n");
@@ -143,7 +187,7 @@ public final class vote_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <img src=\"\" class=\"img-rounded\">\n");
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"president\">\n");
-      out.write("      <!--<option value=\"default\" selected>Select President</option>-->\n");
+      out.write("      <option value=\"default\" selected>Select President</option>\n");
       out.write("      ");
  
 Class.forName("com.mysql.jdbc.Driver").newInstance(); 
@@ -158,15 +202,16 @@ while(rs.next())
 
       out.write(" \n");
       out.write("<option value=\"");
-      out.print(rs.getString("Lname"));
+      out.print(rs.getString("Fname")+" "+ rs.getString("Lname"));
       out.write('"');
       out.write('>');
       out.print(rs.getString("Fname")+" "+ rs.getString("Lname"));
       out.write("</option> \n");
  
-} 
+}
 
-      out.write(" \n");
+      out.write("\n");
+      out.write("\n");
       out.write("    </select>\n");
       out.write("  </div>\n");
       out.write("  <!-- column 2 governor -->\n");
@@ -176,7 +221,29 @@ while(rs.next())
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"governor\">\n");
       out.write("      <option value=\"default\" selected>Select Governor</option>\n");
-      out.write("      <option value=\"evanskidero\">Evans Kidero</option>\n");
+      out.write("            ");
+ 
+Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+
+Connection conn2 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
+String query2 = "select Fname, Lname FROM candidates where post ='governor'"; 
+
+Statement s = conn2.createStatement(); 
+ResultSet rs2 = s.executeQuery(query2); 
+while(rs2.next()) 
+{ 
+
+      out.write(" \n");
+      out.write("<option value=\"");
+      out.print(rs2.getString("Lname"));
+      out.write('"');
+      out.write('>');
+      out.print(rs2.getString("Fname")+" "+ rs2.getString("Lname"));
+      out.write("</option> \n");
+ 
+}
+
+      out.write("\n");
       out.write("    </select>\n");
       out.write("  </div>\n");
       out.write("<!-- column 3 MP -->\n");
@@ -186,7 +253,29 @@ while(rs.next())
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"mp\">\n");
       out.write("      <option value=\"default\" selected>Select MP</option>\n");
-      out.write("      <option value=\"ferdinandwaititu\">Ferdinand Waititu</option>\n");
+      out.write("             ");
+ 
+Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+
+Connection conn3 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
+String query3 = "select Fname, Lname FROM candidates where post ='MP'"; 
+
+Statement s2 = conn3.createStatement(); 
+ResultSet rs3 = s2.executeQuery(query3); 
+while(rs3.next()) 
+{ 
+
+      out.write(" \n");
+      out.write("<option value=\"");
+      out.print(rs3.getString("Lname"));
+      out.write('"');
+      out.write('>');
+      out.print(rs3.getString("Fname")+" "+ rs3.getString("Lname"));
+      out.write("</option> \n");
+ 
+}
+
+      out.write("\n");
       out.write("    </select>\n");
       out.write("  </div>\n");
       out.write("<!-- column 4 councillor -->\n");
@@ -196,7 +285,29 @@ while(rs.next())
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"councillor\">\n");
       out.write("      <option value=\"default\" selected>Select Councillor</option>\n");
-      out.write("      <option value=\"nelsonkimaiga\">Nelson Kimaiga</option>\n");
+      out.write("                   ");
+ 
+Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+
+Connection conn4 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
+String query4 = "select Fname, Lname FROM candidates where post ='MP'"; 
+
+Statement s3 = conn4.createStatement(); 
+ResultSet rs4 = s3.executeQuery(query4); 
+while(rs4.next()) 
+{ 
+
+      out.write(" \n");
+      out.write("<option value=\"");
+      out.print(rs4.getString("Lname"));
+      out.write('"');
+      out.write('>');
+      out.print(rs4.getString("Fname")+" "+ rs4.getString("Lname"));
+      out.write("</option> \n");
+ 
+}
+
+      out.write("\n");
       out.write("    </select>\n");
       out.write("  </div>\n");
       out.write("<br>\n");
