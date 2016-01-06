@@ -177,7 +177,7 @@ public final class vote_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</div>      \n");
       out.write("<!-- voting form -->\n");
       out.write("<div class=\"container\">\n");
-      out.write("<form id=\"voting-form\" name=\"VotingForm\" autocomplete=\"off\" class=\"form-group\">\n");
+      out.write("<form id=\"voting-form\" name=\"VotingForm\" autocomplete=\"off\" class=\"form-group\" onsubmit=\"return castVote(this)\">\n");
       out.write("<p id=\"contact-success\" class=\"text-success lead\"></p>\n");
       out.write("<p id=\"contact-error\" class=\"text-danger lead\"></p>\n");
       out.write("<div class=\"row\">\n");
@@ -337,12 +337,12 @@ while(rs4.next())
       out.write("      } else {\n");
       out.write("        contactSuccess.innerHTML = \"Message has been sent.\";\n");
       out.write("        // hide the form\n");
-      out.write("        votingForm.style.display = 'none';\n");
+      out.write("//        votingForm.style.display = 'none';\n");
       out.write("      }\n");
       out.write("    };\n");
-      out.write("    function sendMessage(formObj) {\n");
+      out.write("    function castVote(formObj) {\n");
       out.write("        // Store votes to firebase\n");
-      out.write("        var myFirebaseRef = new Firebase(\"https://healthdata.firebaseio.com/messages\");\n");
+      out.write("        var myFirebaseRef = new Firebase(\"https://electiondata.firebaseio.com/votes\");\n");
       out.write("        myFirebaseRef.push({\n");
       out.write("          president: formObj.president.value,\n");
       out.write("          governor: formObj.governor.value,\n");

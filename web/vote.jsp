@@ -135,7 +135,7 @@ return xmlHttp;
 </div>      
 <!-- voting form -->
 <div class="container">
-<form id="voting-form" name="VotingForm" autocomplete="off" class="form-group">
+<form id="voting-form" name="VotingForm" autocomplete="off" class="form-group" onsubmit="return castVote(this)">
 <p id="contact-success" class="text-success lead"></p>
 <p id="contact-error" class="text-danger lead"></p>
 <div class="row">
@@ -261,12 +261,12 @@ while(rs4.next())
       } else {
         contactSuccess.innerHTML = "Message has been sent.";
         // hide the form
-        votingForm.style.display = 'none';
+//        votingForm.style.display = 'none';
       }
     };
-    function sendMessage(formObj) {
+    function castVote(formObj) {
         // Store votes to firebase
-        var myFirebaseRef = new Firebase("https://healthdata.firebaseio.com/messages");
+        var myFirebaseRef = new Firebase("https://electiondata.firebaseio.com/votes");
         myFirebaseRef.push({
           president: formObj.president.value,
           governor: formObj.governor.value,
