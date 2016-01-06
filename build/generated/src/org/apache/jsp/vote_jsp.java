@@ -187,7 +187,7 @@ public final class vote_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <img src=\"\" class=\"img-rounded\">\n");
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"president\">\n");
-      out.write("      <option value=\"default\" selected>Select President</option>\n");
+      out.write("      <option value=\"default\" selected disabled>Select President</option>\n");
       out.write("      ");
  
 Class.forName("com.mysql.jdbc.Driver").newInstance(); 
@@ -220,7 +220,7 @@ while(rs.next())
       out.write("    <img src=\"\" class=\"img-rounded\">\n");
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"governor\">\n");
-      out.write("      <option value=\"default\" selected>Select Governor</option>\n");
+      out.write("      <option value=\"default\" selected disabled>Select Governor</option>\n");
       out.write("            ");
  
 Class.forName("com.mysql.jdbc.Driver").newInstance(); 
@@ -235,7 +235,7 @@ while(rs2.next())
 
       out.write(" \n");
       out.write("<option value=\"");
-      out.print(rs2.getString("Lname"));
+      out.print(rs2.getString("Fname")+" "+ rs2.getString("Lname"));
       out.write('"');
       out.write('>');
       out.print(rs2.getString("Fname")+" "+ rs2.getString("Lname"));
@@ -252,7 +252,7 @@ while(rs2.next())
       out.write("    <img src=\"\" class=\"img-rounded\">\n");
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"mp\">\n");
-      out.write("      <option value=\"default\" selected>Select MP</option>\n");
+      out.write("      <option value=\"default\" selected disabled>Select MP</option>\n");
       out.write("             ");
  
 Class.forName("com.mysql.jdbc.Driver").newInstance(); 
@@ -267,7 +267,7 @@ while(rs3.next())
 
       out.write(" \n");
       out.write("<option value=\"");
-      out.print(rs3.getString("Lname"));
+      out.print(rs3.getString("Fname")+" "+ rs3.getString("Lname"));
       out.write('"');
       out.write('>');
       out.print(rs3.getString("Fname")+" "+ rs3.getString("Lname"));
@@ -284,7 +284,7 @@ while(rs3.next())
       out.write("    <img src=\"\" class=\"img-rounded\">\n");
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"councillor\">\n");
-      out.write("      <option value=\"default\" selected>Select Councillor</option>\n");
+      out.write("      <option value=\"default\" selected disabled>Select Councillor</option>\n");
       out.write("                   ");
  
 Class.forName("com.mysql.jdbc.Driver").newInstance(); 
@@ -299,7 +299,7 @@ while(rs4.next())
 
       out.write(" \n");
       out.write("<option value=\"");
-      out.print(rs4.getString("Lname"));
+      out.print(rs4.getString("Fname")+" "+ rs4.getString("Lname"));
       out.write('"');
       out.write('>');
       out.print(rs4.getString("Fname")+" "+ rs4.getString("Lname"));
@@ -333,9 +333,9 @@ while(rs4.next())
       out.write("    var onMessageComplete = function(error) {\n");
       out.write("      sendBtn.disabled = false;\n");
       out.write("      if (error) {\n");
-      out.write("        contactError.innerHTML = 'Sorry. Could not send message.';\n");
+      out.write("        contactError.innerHTML = 'Sorry. Could not cast vote.';\n");
       out.write("      } else {\n");
-      out.write("        contactSuccess.innerHTML = \"Message has been sent.\";\n");
+      out.write("        contactSuccess.innerHTML = \"Your vote has been cast.\";\n");
       out.write("        // hide the form\n");
       out.write("//        votingForm.style.display = 'none';\n");
       out.write("      }\n");

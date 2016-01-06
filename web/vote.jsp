@@ -145,7 +145,7 @@ return xmlHttp;
     <img src="" class="img-rounded">
     <br>
     <select class="form-control" name="president">
-      <option value="default" selected>Select President</option>
+      <option value="default" selected disabled>Select President</option>
       <% 
 Class.forName("com.mysql.jdbc.Driver").newInstance(); 
 
@@ -170,7 +170,7 @@ while(rs.next())
     <img src="" class="img-rounded">
     <br>
     <select class="form-control" name="governor">
-      <option value="default" selected>Select Governor</option>
+      <option value="default" selected disabled>Select Governor</option>
             <% 
 Class.forName("com.mysql.jdbc.Driver").newInstance(); 
 
@@ -182,7 +182,7 @@ ResultSet rs2 = s.executeQuery(query2);
 while(rs2.next()) 
 { 
 %> 
-<option value="<%=rs2.getString("Lname")%>"><%=rs2.getString("Fname")+" "+ rs2.getString("Lname")%></option> 
+<option value="<%=rs2.getString("Fname")+" "+ rs2.getString("Lname")%>"><%=rs2.getString("Fname")+" "+ rs2.getString("Lname")%></option> 
 <% 
 }
 %>
@@ -194,7 +194,7 @@ while(rs2.next())
     <img src="" class="img-rounded">
     <br>
     <select class="form-control" name="mp">
-      <option value="default" selected>Select MP</option>
+      <option value="default" selected disabled>Select MP</option>
              <% 
 Class.forName("com.mysql.jdbc.Driver").newInstance(); 
 
@@ -206,7 +206,7 @@ ResultSet rs3 = s2.executeQuery(query3);
 while(rs3.next()) 
 { 
 %> 
-<option value="<%=rs3.getString("Lname")%>"><%=rs3.getString("Fname")+" "+ rs3.getString("Lname")%></option> 
+<option value="<%=rs3.getString("Fname")+" "+ rs3.getString("Lname")%>"><%=rs3.getString("Fname")+" "+ rs3.getString("Lname")%></option> 
 <% 
 }
 %>
@@ -218,7 +218,7 @@ while(rs3.next())
     <img src="" class="img-rounded">
     <br>
     <select class="form-control" name="councillor">
-      <option value="default" selected>Select Councillor</option>
+      <option value="default" selected disabled>Select Councillor</option>
                    <% 
 Class.forName("com.mysql.jdbc.Driver").newInstance(); 
 
@@ -230,7 +230,7 @@ ResultSet rs4 = s3.executeQuery(query4);
 while(rs4.next()) 
 { 
 %> 
-<option value="<%=rs4.getString("Lname")%>"><%=rs4.getString("Fname")+" "+ rs4.getString("Lname")%></option> 
+<option value="<%=rs4.getString("Fname")+" "+ rs4.getString("Lname")%>"><%=rs4.getString("Fname")+" "+ rs4.getString("Lname")%></option> 
 <% 
 }
 %>
@@ -257,9 +257,9 @@ while(rs4.next())
     var onMessageComplete = function(error) {
       sendBtn.disabled = false;
       if (error) {
-        contactError.innerHTML = 'Sorry. Could not send message.';
+        contactError.innerHTML = 'Sorry. Could not cast vote.';
       } else {
-        contactSuccess.innerHTML = "Message has been sent.";
+        contactSuccess.innerHTML = "Your vote has been cast.";
         // hide the form
 //        votingForm.style.display = 'none';
       }
