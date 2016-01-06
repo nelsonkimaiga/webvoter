@@ -4,7 +4,7 @@
     Author     : kimaiga
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*"%>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -101,8 +101,22 @@ function MM_validateForm() {
     <img src="" class="img-rounded">
     <br>
     <select class="form-control" name="president">
-      <option value="default" selected>Select President</option>
-      <option value="uhurukenyatta">Uhuru Kenyatta</option>
+      <!--<option value="default" selected>Select President</option>-->
+      <% 
+Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+
+Connection conn = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
+String query = "select Fname, Lname FROM candidates where post ='president'"; 
+
+Statement st = conn.createStatement(); 
+ResultSet rs = st.executeQuery(query); 
+while(rs.next()) 
+{ 
+%> 
+<option value="<%=rs.getString("Lname")%>"><%=rs.getString("Fname")+" "+ rs.getString("Lname")%></option> 
+<% 
+} 
+%> 
     </select>
   </div>
   <!-- column 2 governor -->
@@ -152,7 +166,7 @@ function MM_validateForm() {
     var votingForm = document.getElementById('voting-form');
     var contactSuccess = document.getElementById('contact-success');
     var contactError = document.getElementById('contact-error');
-    var sendBtn = document.getElementById('send-button');
+    var sendBtn = document.getElementById('cast-vote');
     var onMessageComplete = function(error) {
       sendBtn.disabled = false;
       if (error) {

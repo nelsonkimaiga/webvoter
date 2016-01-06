@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import java.sql.*;
 
 public final class vote_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -142,8 +143,30 @@ public final class vote_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <img src=\"\" class=\"img-rounded\">\n");
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"president\">\n");
-      out.write("      <option value=\"default\" selected>Select President</option>\n");
-      out.write("      <option value=\"uhurukenyatta\">Uhuru Kenyatta</option>\n");
+      out.write("      <!--<option value=\"default\" selected>Select President</option>-->\n");
+      out.write("      ");
+ 
+Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+
+Connection conn = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
+String query = "select Fname, Lname FROM candidates where post ='president'"; 
+
+Statement st = conn.createStatement(); 
+ResultSet rs = st.executeQuery(query); 
+while(rs.next()) 
+{ 
+
+      out.write(" \n");
+      out.write("<option value=\"");
+      out.print(rs.getString("Lname"));
+      out.write('"');
+      out.write('>');
+      out.print(rs.getString("Fname")+" "+ rs.getString("Lname"));
+      out.write("</option> \n");
+ 
+} 
+
+      out.write(" \n");
       out.write("    </select>\n");
       out.write("  </div>\n");
       out.write("  <!-- column 2 governor -->\n");
@@ -195,7 +218,7 @@ public final class vote_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    var votingForm = document.getElementById('voting-form');\n");
       out.write("    var contactSuccess = document.getElementById('contact-success');\n");
       out.write("    var contactError = document.getElementById('contact-error');\n");
-      out.write("    var sendBtn = document.getElementById('send-button');\n");
+      out.write("    var sendBtn = document.getElementById('cast-vote');\n");
       out.write("    var onMessageComplete = function(error) {\n");
       out.write("      sendBtn.disabled = false;\n");
       out.write("      if (error) {\n");
