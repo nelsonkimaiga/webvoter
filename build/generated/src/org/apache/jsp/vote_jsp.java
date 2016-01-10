@@ -5,7 +5,6 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import java.sql.*;
 import java.io.*;
-import javax.imageio.ImageIO;
 
 public final class vote_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -186,33 +185,9 @@ public final class vote_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<p id=\"contact-error\" class=\"text-danger lead\"></p>\n");
       out.write("<div class=\"row\">\n");
       out.write("  <!-- column 1 president -->\n");
-      out.write("  <div class=\"col-md-3\">\n");
+      out.write("  <div class=\" col-lg-3 col-md-3 col-sm-3\">\n");
       out.write("    <span><h3>President</h3></span>\n");
-
-    String names = request.getParameter("president").toString();
-       String[] devide=names.split(" ") ;
-       String fn=devide[0];
-       String ln=devide[1];
-    
-Class.forName("com.mysql.jdbc.Driver").newInstance();
-
-Connection imageconn = DriverManager.getConnection("jdbc:mysql://localhost:3306/uchaguzi","root","");
-String imagequery = "SELECT Image FROM candidates where Fname ='"+fn+"' and Lname ='"+ln+"'";
-
-Statement imagest = imageconn.createStatement();
-ResultSet imagers = imagest.executeQuery(imagequery);
-while(imagers.next())
-{    
-
-      out.write("\n");
-      out.write("    <img src=\"");
-Blob test=imagers.getBlob("image");
-      out.write("\" class=\"img-rounded\">\n");
-      out.write(" ");
-; 
-}
-
-      out.write("\n");
+      out.write("    <img src=\"\" class=\"img-rounded\">\n");
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"president\">\n");
       out.write("      <option value=\"default\" selected disabled>Select President</option>\n");
