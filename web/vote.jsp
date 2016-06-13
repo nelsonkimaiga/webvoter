@@ -20,12 +20,8 @@ and open the template in the editor.
    <!-- firebase API -->
    <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
   <!-- Bootstrap -->
-  <link href="css/bootstrap.css" rel="stylesheet">
-  <link href="css/bootstrap-theme.css" rel="stylesheet">
-  <link href="css/styles.css" rel="stylesheet">
-  <!-- font-awsome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="fonts/font-awesome.min.css">
+  <link href="css/foundation.css" rel="stylesheet">
+  <link href="css/app.css" rel="stylesheet">
   <!-- fonts -->
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   	<!-- JavaScript  -->
