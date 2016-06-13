@@ -18,6 +18,26 @@
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <body>
         <div class="container">
+            <nav class="nav ">
+                <div class="nav-center">
+                    <a class="toggle-nav" href="#">&#9776;</a>
+                    <div class="nav-mobile">
+                        <ul class="left">
+                            <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                            <li><a href="#"><i class="fa fa-book"></i> Categories</a></li>
+                            <li><a href="#"><i class="fa fa-fire"></i> Most Popular</a></li>
+                        </ul>
+                        <ul class="right">
+                            <li>
+                                <a href="#"><i class="fa fa-user"></i> About</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-envelope"></i> Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav
             
         </div>
         
