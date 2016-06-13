@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>E-Voter|Welcome</title>
+  <!-- Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <!-- font-awsome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <!-- fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+  	<!-- JavaScript  -->
+  <script src="js/jquery-1.11.3.min.js"></script>
+  <script src="js/modernizr.js"></script>
+</head>
+<body>
+<div id="wrapper">
+	<div  class="container">
+	<!-- welcome message -->
+<!-- 		<div class="content">
+          <h1 class="hero-header">
+            <span class="header-top">Vote for </span><span class="who">your leaders</span>
+          </h1>
+          <div class="description">
+            <p>
+              Join millions of Kenyans who are registered to vote by practising your democratic right.
+            </p>
+           </div>
+</div> -->
+<!-- countdown timer -->
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-lg-12">
+          <div id="movingicon">
+                      <i class="fa fa-hourglass fa-2x fa-spin icon-color"></i>
+  <br/>
+
+
+          <div id="countdown"></div> <!--calling this countdown class for the countdown timer javascript-->
+        </div>
+        </div>
+      </div>
+
+<!-- Headline -->
+<div id="headline">
+  <h1>PRESIDENTIAL ASPIRANTS</h1>
+</div>
+
+<br>
+
+<div id="candidates">
+<marquee behavior="alternate"  direction="left" align="center" scrollamount="2.5">
+     <div class="row">
+       <img src="images/raila.jpg" class="img-circle">
+       <img src="images/uhuru.jpg" class="img-circle">
+       <img src="images/ruto.jpg" class="img-circle">
+       <img src="images/ngilu.jpg" class="img-circle">
+       <img src="images/karua.jpg" class="img-circle">
+     </div>
+</marquee>     
+</div>
+
+<!-- link button -->
+<br>
+
+<div id="options">
+  <div class="row">
+   <a class="btn btn-link btn-large" id="proceed" href="vote.jsp" role="button">Proceed to Vote<i class="fa fa-check-check"></i></a> 
+   <a href="#" role="button" class="btn btn-primary btn-large" id="view">View Results <i class="fa fa-info"></i></a>
+ </div>
+</div>
+
+<br>
+<!-- footer -->
+<div class="footer">
+  <div class="copy">
+    <!-- curent date and year to appear on footer-->
+  &copy; E-Voter. <script type="text/javascript">
+  document.write(new Date().getFullYear());
+</script>
+</div>
+
+<!--gooogle analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i[‘GoogleAnalyticsObject’]=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,’script’,’//www.google-analytics.com/analytics.js’,’ga’);
+
+    ga(‘create’, ‘UA-XXXX-Y’, ‘auto’);
+    ga(‘send’, ‘pageview’);
+    </script>
+    <!-- end of google analytics -->
+
+   <script type="text/javascript">
+            $(document).ready(function() {
+
+              $().UItoTop({ easingType: 'easeOutQuart' });
+
+            });
+          </script>
+        <a href="index.html" id="toTop" style="display: block;"><span id="toTopHover"></span><span id="toTopHover"></span> <span id="toTopHover" style="opacity: 1;"> </span></a>
+</div>
+
+	</div>
+</div>
+
+<!-- Javascript files -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <!-- countdown timer javascript code -->
+  <script type="text/javascript">
+  $('#countdown').countdown('2017/08/01', function(event) { //date to countdown
+    $(this).html(event.strftime('Count down to the General Election: %w weeks %d days %H:%M:%S')); //message that prints out when the code executes
+  });
+</script>
+</body>
+</html>
+
