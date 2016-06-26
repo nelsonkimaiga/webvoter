@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start Page</title>
+    <title>Register</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
     <!-- fonts -->
@@ -74,14 +74,14 @@
                             <hr>
                             <fieldset>
                                 <label>Voter ID</label>
-                                <input type="text" value="" name="voterid">
+                                <input type="text" value='<%="VT"+(int)(Math.random()*200)%>' name="voterid">
                             </fieldset>
-                            <fieldset>
+<!--                            <fieldset>
                                 <label>Place of Issue</label>
                                 <select name="placeissued">
                                     <option value="default" selected disabled>Place issued</option>
                                 </select>
-                            </fieldset>
+                            </fieldset>-->
                             <fieldset>
                                 <label>Ward</label>
                                 <select name="ward">
@@ -103,6 +103,7 @@
                                 </select>
                             </fieldset>
                         </div>
+                        <button type="submit" class="button success" value="register">REGISTER</button>
                     </form>
                 </div>
             </div>
