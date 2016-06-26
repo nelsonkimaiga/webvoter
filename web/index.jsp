@@ -27,8 +27,8 @@
                     <div class="nav-mobile">
                         <ul class="left">
                             <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                            <li><a href="#"><i class="fa fa-book"></i>Voter Registration</a></li>
-                            <li><a href="#"><i class="fa fa-fire"></i> Cast Your Vote</a></li>
+                            <li><a href="register.jsp"><i class="fa fa-book"></i>Voter Registration</a></li>
+                            <li><a href="vote.jsp"><i class="fa fa-fire"></i> Cast Your Vote</a></li>
                         </ul>
                         <ul class="right">
                             <li>
@@ -41,9 +41,7 @@
                     </div>
                 </div>
             </nav>
-            <br>
-            <br>
-            <div class="row">
+            <div class="row bodycontent">
                 <div class="medium-8 columns">
                     
                 </div>
@@ -51,24 +49,22 @@
                     <div id="movingicon">
                         <i class="fa fa-hourglass fa-3x fa-spin icon-color"></i>
                         <br/>
-                        <div id="countdown"></div>
+                        <div id="countdown">
                             
-                    </div>
-                        
-                </div>
-                    
-            </div>
-            
+                        </div>                            
+                    </div>                        
+                </div>                    
+            </div>           
         </div>
-            <!-- countdown timer javascript code -->
-            <script type="text/javascript">
-              $('#countdown').countdown('2017/08/01', function(event) { //date to countdown
-                  $(this).html(event.strftime('Count down to the General Election: %w weeks %d days %H:%M:%S')); //message that prints out when the code executes
-                  });
-            </script>        
-        <script src="js/vendor/what-input.js"></script>
+        <!-- countdown timer -->
+        <script type="text/javascript">
+            $('#countdown').countdown('2017/08/01', function(event) {
+                $(this).html(event.strftime('Count down to the General Election: %w weeks %d days %H:%M:%S'));
+            });
+                </script>
         <script src="js/vendor/foundation.js"></script>
-        <script src="js/jquery.countdown.js"></script>
+        <script src="js/vendor/what-input.js"></script>
+        <script src="js/jquery.countdown.min.js"></script>
         <script src="js/app.js"></script>
     </body>
 </html>

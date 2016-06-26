@@ -184,28 +184,8 @@ public final class vote_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"president\">\n");
       out.write("      <option value=\"default\" selected disabled>Select President</option>\n");
-      out.write("      ");
- 
-Class.forName("com.mysql.jdbc.Driver").newInstance(); 
-
-Connection conn = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
-String query = "select Fname, Lname FROM candidates where post ='president'"; 
-
-Statement st = conn.createStatement(); 
-ResultSet rs = st.executeQuery(query); 
-while(rs.next()) 
-{ 
-
       out.write(" \n");
-      out.write("<option value=\"");
-      out.print(rs.getString("Fname")+" "+ rs.getString("Lname"));
-      out.write('"');
-      out.write('>');
-      out.print(rs.getString("Fname")+" "+ rs.getString("Lname"));
-      out.write("</option> \n");
- 
-}
-
+      out.write("<option value=\"\"></option> \n");
       out.write("\n");
       out.write("\n");
       out.write("    </select>\n");
@@ -217,29 +197,7 @@ while(rs.next())
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"governor\">\n");
       out.write("      <option value=\"default\" selected disabled>Select Governor</option>\n");
-      out.write("            ");
- 
-Class.forName("com.mysql.jdbc.Driver").newInstance(); 
-
-Connection conn2 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
-String query2 = "select Fname, Lname FROM candidates where post ='governor'"; 
-
-Statement s = conn2.createStatement(); 
-ResultSet rs2 = s.executeQuery(query2); 
-while(rs2.next()) 
-{ 
-
-      out.write(" \n");
-      out.write("<option value=\"");
-      out.print(rs2.getString("Fname")+" "+ rs2.getString("Lname"));
-      out.write('"');
-      out.write('>');
-      out.print(rs2.getString("Fname")+" "+ rs2.getString("Lname"));
-      out.write("</option> \n");
- 
-}
-
-      out.write("\n");
+      out.write("<option value=\"\"></option> \n");
       out.write("    </select>\n");
       out.write("  </div>\n");
       out.write("<!-- column 3 MP -->\n");
@@ -249,28 +207,8 @@ while(rs2.next())
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"mp\">\n");
       out.write("      <option value=\"default\" selected disabled>Select MP</option>\n");
-      out.write("             ");
- 
-Class.forName("com.mysql.jdbc.Driver").newInstance(); 
-
-Connection conn3 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
-String query3 = "select Fname, Lname FROM candidates where post ='MP'"; 
-
-Statement s2 = conn3.createStatement(); 
-ResultSet rs3 = s2.executeQuery(query3); 
-while(rs3.next()) 
-{ 
-
       out.write(" \n");
-      out.write("<option value=\"");
-      out.print(rs3.getString("Fname")+" "+ rs3.getString("Lname"));
-      out.write('"');
-      out.write('>');
-      out.print(rs3.getString("Fname")+" "+ rs3.getString("Lname"));
-      out.write("</option> \n");
- 
-}
-
+      out.write("<option value=\"\"></option> \n");
       out.write("\n");
       out.write("    </select>\n");
       out.write("  </div>\n");
@@ -280,29 +218,8 @@ while(rs3.next())
       out.write("    <img src=\"\" class=\"img-rounded\">\n");
       out.write("    <br>\n");
       out.write("    <select class=\"form-control\" name=\"councillor\">\n");
-      out.write("      <option value=\"default\" selected disabled>Select Councillor</option>\n");
-      out.write("                   ");
- 
-Class.forName("com.mysql.jdbc.Driver").newInstance(); 
-
-Connection conn4 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
-String query4 = "select Fname, Lname FROM candidates where post ='MP'"; 
-
-Statement s3 = conn4.createStatement(); 
-ResultSet rs4 = s3.executeQuery(query4); 
-while(rs4.next()) 
-{ 
-
-      out.write(" \n");
-      out.write("<option value=\"");
-      out.print(rs4.getString("Fname")+" "+ rs4.getString("Lname"));
-      out.write('"');
-      out.write('>');
-      out.print(rs4.getString("Fname")+" "+ rs4.getString("Lname"));
-      out.write("</option> \n");
- 
-}
-
+      out.write("      <option value=\"default\" selected disabled>Select Councillor</option> \n");
+      out.write("<option value=\"\"></option> \n");
       out.write("\n");
       out.write("    </select>\n");
       out.write("  </div>\n");

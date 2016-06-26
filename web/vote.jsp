@@ -142,21 +142,9 @@ return xmlHttp;
     <br>
     <select class="form-control" name="president">
       <option value="default" selected disabled>Select President</option>
-      <% 
-Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+ 
+<option value=""></option> 
 
-Connection conn = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
-String query = "select Fname, Lname FROM candidates where post ='president'"; 
-
-Statement st = conn.createStatement(); 
-ResultSet rs = st.executeQuery(query); 
-while(rs.next()) 
-{ 
-%> 
-<option value="<%=rs.getString("Fname")+" "+ rs.getString("Lname")%>"><%=rs.getString("Fname")+" "+ rs.getString("Lname")%></option> 
-<% 
-}
-%>
 
     </select>
   </div>
@@ -167,21 +155,7 @@ while(rs.next())
     <br>
     <select class="form-control" name="governor">
       <option value="default" selected disabled>Select Governor</option>
-            <% 
-Class.forName("com.mysql.jdbc.Driver").newInstance(); 
-
-Connection conn2 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
-String query2 = "select Fname, Lname FROM candidates where post ='governor'"; 
-
-Statement s = conn2.createStatement(); 
-ResultSet rs2 = s.executeQuery(query2); 
-while(rs2.next()) 
-{ 
-%> 
-<option value="<%=rs2.getString("Fname")+" "+ rs2.getString("Lname")%>"><%=rs2.getString("Fname")+" "+ rs2.getString("Lname")%></option> 
-<% 
-}
-%>
+<option value=""></option> 
     </select>
   </div>
 <!-- column 3 MP -->
@@ -191,21 +165,9 @@ while(rs2.next())
     <br>
     <select class="form-control" name="mp">
       <option value="default" selected disabled>Select MP</option>
-             <% 
-Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+ 
+<option value=""></option> 
 
-Connection conn3 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
-String query3 = "select Fname, Lname FROM candidates where post ='MP'"; 
-
-Statement s2 = conn3.createStatement(); 
-ResultSet rs3 = s2.executeQuery(query3); 
-while(rs3.next()) 
-{ 
-%> 
-<option value="<%=rs3.getString("Fname")+" "+ rs3.getString("Lname")%>"><%=rs3.getString("Fname")+" "+ rs3.getString("Lname")%></option> 
-<% 
-}
-%>
     </select>
   </div>
 <!-- column 4 councillor -->
@@ -214,22 +176,9 @@ while(rs3.next())
     <img src="" class="img-rounded">
     <br>
     <select class="form-control" name="councillor">
-      <option value="default" selected disabled>Select Councillor</option>
-                   <% 
-Class.forName("com.mysql.jdbc.Driver").newInstance(); 
+      <option value="default" selected disabled>Select Councillor</option> 
+<option value=""></option> 
 
-Connection conn4 = DriverManager.getConnection( "jdbc:mysql://localhost:3306/uchaguzi","root",""); 
-String query4 = "select Fname, Lname FROM candidates where post ='MP'"; 
-
-Statement s3 = conn4.createStatement(); 
-ResultSet rs4 = s3.executeQuery(query4); 
-while(rs4.next()) 
-{ 
-%> 
-<option value="<%=rs4.getString("Fname")+" "+ rs4.getString("Lname")%>"><%=rs4.getString("Fname")+" "+ rs4.getString("Lname")%></option> 
-<% 
-}
-%>
     </select>
   </div>
 <br>
