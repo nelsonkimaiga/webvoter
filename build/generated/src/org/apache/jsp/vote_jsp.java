@@ -60,12 +60,8 @@ public final class vote_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("   <!-- firebase API -->\n");
       out.write("   <script src=\"https://cdn.firebase.com/js/client/2.3.2/firebase.js\"></script>\n");
       out.write("  <!-- Bootstrap -->\n");
-      out.write("  <link href=\"css/bootstrap.css\" rel=\"stylesheet\">\n");
-      out.write("  <link href=\"css/bootstrap-theme.css\" rel=\"stylesheet\">\n");
-      out.write("  <link href=\"css/styles.css\" rel=\"stylesheet\">\n");
-      out.write("  <!-- font-awsome -->\n");
-      out.write("  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css\">\n");
-      out.write("  <link rel=\"stylesheet\" type=\"text/css\" href=\"fonts/font-awesome.min.css\">\n");
+      out.write("  <link href=\"css/foundation.css\" rel=\"stylesheet\">\n");
+      out.write("  <link href=\"css/app.css\" rel=\"stylesheet\">\n");
       out.write("  <!-- fonts -->\n");
       out.write("  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>\n");
       out.write("  \t<!-- JavaScript  -->\n");
