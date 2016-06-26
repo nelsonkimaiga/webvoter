@@ -42,9 +42,70 @@
         <div class="container bodycontent">
             <h5 id="registertext">Register as a voter by filling the registration form below</h5>
             <br>
-            <form action="" method="" name="registrationForm" onsubmit="return validateForm()">
-                
-            </form>
+            <div class="row">
+                <div class="small-12 medium-12 large-12 columns">
+                    <form action="" method="" name="registrationForm" onsubmit="return validateForm()" autocomplete="off">
+                        <div class="large-6 columns">
+                            <h6>Voter Details</h6>
+                            <hr>
+                            <fieldset>
+                                <label>Full Names</label>
+                                <input type="text" name="fullname" placeholder="FULL NAMES">
+                            </fieldset>
+                            <fieldset>
+                                <label>ID Card Number</label>
+                                <input type="text" name="idcard" placeholder="ID CARD NUMBER">
+                            </fieldset>
+                            <fieldset>
+                                <label>Gender</label>
+                                <select name="gender">
+                                    <option value="default" selected disabled>Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </fieldset>
+                            <fieldset>
+                                <label>Date of Birth</label>
+                                <input type="date" name="dob">
+                            </fieldset>
+                        </div>
+                        <div class="large-6 columns">
+                            <h6>Voter's card details</h6>
+                            <hr>
+                            <fieldset>
+                                <label>Voter ID</label>
+                                <input type="text" value="" name="voterid">
+                            </fieldset>
+                            <fieldset>
+                                <label>Place of Issue</label>
+                                <select name="placeissued">
+                                    <option value="default" selected disabled>Place issued</option>
+                                </select>
+                            </fieldset>
+                            <fieldset>
+                                <label>Ward</label>
+                                <select name="ward">
+                                    <option value="default" selected disabled>Ward</option>
+                                </select>
+                            </fieldset>
+                            <fieldset>
+                                <label>Constituency</label>
+                                <input type="text" name="constituency" placeholder="CONSTITUENCY"> 
+                            </fieldset>
+                            <fieldset>
+                                <label>County</label>
+                                <input type="text" name="county" placeholder="COUNTY"> 
+                            </fieldset>
+                            <fieldset>
+                                <label>Polling Center</label>
+                                <select name="pollcenter">
+                                    <option value="default" selected disabled>Polling Center</option>
+                                </select>
+                            </fieldset>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
         
         
