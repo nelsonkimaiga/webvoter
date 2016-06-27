@@ -6,12 +6,43 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration</title>
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" href="css/app.css">
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <script src="js/vendor/jquery.js"></script>
+  </head>
     <body>
-        <h1>Hello World!</h1>
+        <nav class="nav ">
+            <div class="nav-center">
+                <a class="toggle-nav" href="#">&#9776;</a>
+                <div class="nav-mobile">
+                    <ul class="left">
+                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href=""><i class="fa fa-book"></i>Election Management</a></li>
+                        <li><a href=""><i class="fa fa-fire"></i></a></li>
+                    </ul>
+                    <ul class="right">
+                        <li>
+                            <a href="#"><i class="fa fa-user"></i>Candidate Bios</a>
+                        </li>
+                        <li>
+                            <a href="logout.jsp"><i class="fa fa-envelope">Logout</i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                
+            </div>
+        </div>
     </body>
 </html>

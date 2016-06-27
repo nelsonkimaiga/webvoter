@@ -81,7 +81,7 @@
                             </fieldset>
                             <fieldset>
                                 <label>ID Card Number</label>
-                                <input type="text" name="idcard" placeholder="ID CARD NUMBER">
+                                <input type="number" name="idcard" placeholder="ID CARD NUMBER">
                             </fieldset>
                             <fieldset>
                                 <label>Gender</label>

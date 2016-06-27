@@ -147,37 +147,8 @@ ul{
     
 }
 
-
-
-#wrapper {
-	text-align: center;
-	padding: 50px 0;
-	background-attachment: relative;
-	background-position: center center;
-	min-height: 650px;
-	width: 100%;	
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-/*Welcome message div*/
-.hero .content h1, .hero .content p {
-    text-align: center; 
-}
-
-.hero .description {
-    margin: 0 auto;
-    max-width: 40em;
-}
-
-#headline{
-    margin-top: 50px;
+#adminlogin{
+    margin-top: 70px;
 }
 
 /*Countdown timer*/
