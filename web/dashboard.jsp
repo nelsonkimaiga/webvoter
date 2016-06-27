@@ -39,9 +39,14 @@
                 </div>
             </div>
         </nav>
-        <div class="container">
+        <div class="container bodycontent">
             <div class="row">
-                
+                <div class="large-6 large-centered columns">
+                    <a href="">Candidate Registration</a>
+                    <hr>
+                    <a href="">Electoral Boundaries</a>
+                    <hr>
+                </div>
             </div>
         </div>
     </body>
