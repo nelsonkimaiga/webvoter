@@ -134,9 +134,7 @@
                     </form>
                 </div>
             </div>
-        </div>
-        
-        
+        </div>        
         <script src="js/vendor/foundation.js"></script>
         <script src="js/vendor/what-input.js"></script>
         <script src="js/jquery.countdown.min.js"></script>
