@@ -40,14 +40,53 @@
             </div>
         </nav>
         <div class="container bodycontent">
-            <div class="large-10 large-centered columns">
-                <!--county-->
-                <form action="" method="" name="">
-                    <fieldset>
-                        <label>County ID</label>
-                        <input type="text" value='<%="COUN"+(int) (Math.random()*200)%>'>
-                    </fieldset>
-                </form>
+            <div class="row">
+                <div class="small-12 medium-8 large-4 columns">
+                    <h6>County</h6>
+                    <form action="" method="" name="">
+                        <fieldset>
+                            <label>County ID</label>
+                            <input type="text" value='<%="COUN"+(int) (Math.random()*200)%>'>
+                        </fieldset>
+                        <fieldset>
+                            <label>Name</label>
+                            <select name="countyname">
+                                <option value="default" disabled="true" selected="true">County Name</option>
+                            </select>
+                        </fieldset>
+                        <button type="submit" class="button secondary">Save</button>
+                    </form>
+                        <hr>
+                        <h6>Constituency</h6>
+                        <form action="" method="" name="">
+                            <fieldset>
+                                <label>County ID</label>
+                                <input type="text" value='<%="CONS"+(int) (Math.random()*200)%>'>
+                            </fieldset>
+                            <fieldset>
+                                <label>Name</label>
+                                <select name="constituencyname">
+                                    <option value="default" disabled="true" selected="true">Constituency Name</option>
+                                </select>
+                            </fieldset>
+                            <button type="submit" class="button secondary">Save</button>
+                    </form>
+                            <hr>
+                            <h6>Ward</h6>
+                            <form action="" method="" name="">
+                                <fieldset>
+                                    <label>Ward ID</label>
+                                    <input type="text" value='<%="WARD"+(int) (Math.random()*200)%>'>
+                                </fieldset>
+                                <fieldset>
+                                    <label>Name</label>
+                                    <select name="wardname">
+                                        <option value="default" disabled="true" selected="true">Ward Name</option>
+                                    </select>
+                                </fieldset>
+                                <button type="submit" class="button secondary">Save</button>
+                            </form>
+                </div>
             </div>
         </div>
     </body>
