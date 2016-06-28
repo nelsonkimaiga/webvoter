@@ -86,12 +86,16 @@
                                 </fieldset>
                                 <button type="submit" class="button secondary">Save</button>
                             </form>
-                                <!--election panle starts here-->
+                                <!--election panel starts here-->
                                 <div class="small-12 medium-12 large-8 columns">
                                     
                                 </div>
                 </div>
             </div>
         </div>
+        <script src="js/vendor/foundation.js"></script>
+        <script src="js/vendor/what-input.js"></script>
+        <script src="js/jquery.countdown.min.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
