@@ -131,13 +131,17 @@ public final class electoral_002dboundaries_jsp extends org.apache.jasper.runtim
       out.write("                                </fieldset>\n");
       out.write("                                <button type=\"submit\" class=\"button secondary\">Save</button>\n");
       out.write("                            </form>\n");
-      out.write("                                <!--election panle starts here-->\n");
-      out.write("                                <div class=\"small-12 medium-12 large-8 columns\">\n");
-      out.write("                                    \n");
-      out.write("                                </div>\n");
       out.write("                </div>\n");
+      out.write("                                <!--election panel starts here-->\n");
+      out.write("                                <div class=\"small-12 medium-12 large-8 columns\">\n");
+      out.write("                                    <h6>Create a new election entry</h6>\n");
+      out.write("                                </div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
+      out.write("        <script src=\"js/vendor/foundation.js\"></script>\n");
+      out.write("        <script src=\"js/vendor/what-input.js\"></script>\n");
+      out.write("        <script src=\"js/jquery.countdown.min.js\"></script>\n");
+      out.write("        <script src=\"js/app.js\"></script>\n");
       out.write("    </body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
