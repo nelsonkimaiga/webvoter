@@ -86,6 +86,10 @@
                                 </fieldset>
                                 <button type="submit" class="button secondary">Save</button>
                             </form>
+                                <!--election panle starts here-->
+                                <div class="small-12 medium-12 large-8 columns">
+                                    
+                                </div>
                 </div>
             </div>
         </div>
