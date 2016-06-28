@@ -86,11 +86,11 @@
                                 </fieldset>
                                 <button type="submit" class="button secondary">Save</button>
                             </form>
+                </div>
                                 <!--election panel starts here-->
                                 <div class="small-12 medium-12 large-8 columns">
-                                    
+                                    <h6>LOL</h6>
                                 </div>
-                </div>
             </div>
         </div>
         <script src="js/vendor/foundation.js"></script>

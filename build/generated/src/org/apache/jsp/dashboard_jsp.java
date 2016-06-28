@@ -85,7 +85,6 @@ public final class dashboard_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <hr>\n");
       out.write("                    <a href=\"\">Electoral Boundaries</a>\n");
       out.write("                    <hr>\n");
-      out.write("                    <a></a>\n");
       out.write("                </div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
