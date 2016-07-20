@@ -51,16 +51,16 @@
                 <a class="toggle-nav" href="#">&#9776;</a>
                 <div class="nav-mobile">
                     <ul class="left">
-                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-                        <li><a href=""><i class="fa fa-book"></i>Election Management</a></li>
-                        <li><a href=""><i class="fa fa-fire"></i></a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="">Election Management</a></li>
+                        <li><a href=""></a></li>
                     </ul>
                     <ul class="right">
                         <li>
-                            <a href="#"><i class="fa fa-user"></i>Candidate Bios</a>
+                            <a href="#">Candidate Bios</a>
                         </li>
                         <li>
-                            <a href="logout.jsp"><i class="fa fa-envelope">Logout</i></a>
+                            <a href="logout.jsp">Logout</a>
                         </li>
                     </ul>
                 </div>
