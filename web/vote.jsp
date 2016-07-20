@@ -25,9 +25,7 @@ and open the template in the editor.
   <!-- fonts -->
   <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
   	<!-- JavaScript  -->
-  <script src="js/jquery-1.11.3.min.js"></script>
-  <script src="js/modernizr.js"></script>
-  
+  <script src="js/vendor/jquery.js"></script>  
   <!-- Form validation -->
   <script type="text/javascript">
 function MM_findObj(n, d) {
@@ -54,63 +52,35 @@ function MM_validateForm() {
   document.MM_returnValue = (errors == '');
 }
   </script>
-<!--loading icons-->
-<script>
-    $(window).load(function() {
-		// Animate loader off screen
-		$(".se-pre-con").fadeOut("slow");;
-	});
-</script>
-<!--xmlHTTP Request script-->
-<script type="text/javascript"> 
-function showEmp(name){ 
-if(document.getElementById("").value!="-1"){ 
-xmlHttp=GetXmlHttpObject() 
-if (xmlHttp==null){ 
-alert ("Browser does not support HTTP Request") 
-return 
-} 
-var url="getvalue.jsp" 
-url=url+"?name="+name 
-xmlHttp.onreadystatechange=stateChanged 
-xmlHttp.open("GET",url,true) 
-xmlHttp.send(null) 
-} 
-else{ 
-alert("Please Select Employee Id"); 
-} 
-} 
-function stateChanged(){ 
-if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") { 
-var showdata = xmlHttp.responseText; 
-var strar = showdata.split(":"); 
-document.getElementById("no").value= strar[1]; 
-document.getElementById("manager").value= strar[2]; 
-} 
-} 
-
-function GetXmlHttpObject(){ 
-var xmlHttp=null; 
-try{ 
-xmlHttp=new XMLHttpRequest(); 
-} 
-catch (e) { 
-try { 
-xmlHttp=new ActiveXObject("Msxml2.XMLHTTP"); 
-} 
-catch (e) { 
-xmlHttp=new ActiveXObject("Microsoft.XMLHTTP"); 
-} 
-} 
-return xmlHttp; 
-} 
-</script> 
 </head>
     <body>
-        <div class="se-pre-con"></div>
+        <div class="container">
+            <nav class="nav ">
+                <div class="nav-center">
+                    <a class="toggle-nav" href="#">&#9776;</a>
+                    <div class="nav-mobile">
+                        <ul class="left">
+                            <li><a href="index.jsp"><i class="fa fa-home"></i> Home</a></li>
+                            <li><a href="register.jsp"><i class="fa fa-book"></i>Voter Registration</a></li>
+                            <li><a href="vote.jsp"><i class="fa fa-fire"></i> Cast Your Vote</a></li>
+                        </ul>
+                        <ul class="right">
+                            <li>
+                                <a href="#"><i class="fa fa-user"></i>Candidate Bios</a>
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-envelope"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+        </div>
+<!--        <div class="se-pre-con"></div>
     <div id="wrapper">
      <div class="container">
-        <!-- Verification form-->
+         Verification form
       <form action="VerifyVoter" method="POST" name="VerifyForm" autocomplete="off" class="form-inline">
         <h3>Voter Verification</h3>
 
@@ -129,13 +99,13 @@ return xmlHttp;
         </form>
       <br>
 </div>      
-<!-- voting form -->
+ voting form 
 <div class="container">
 <form id="voting-form" name="VotingForm" autocomplete="off" class="form-group" onsubmit="return castVote(this)">
 <p id="contact-success" class="text-success lead"></p>
 <p id="contact-error" class="text-danger lead"></p>
 <div class="row">
-  <!-- column 1 president -->
+   column 1 president 
   <div class="col-md-3">
     <span><h3>President</h3></span>
     <img src="" class="img-rounded">
@@ -148,7 +118,7 @@ return xmlHttp;
 
     </select>
   </div>
-  <!-- column 2 governor -->
+   column 2 governor 
   <div class="col-md-3">
     <span><h3>Governor</h3></span>
     <img src="" class="img-rounded">
@@ -158,7 +128,7 @@ return xmlHttp;
 <option value=""></option> 
     </select>
   </div>
-<!-- column 3 MP -->
+ column 3 MP 
   <div class="col-md-3">
     <span><h3>Member of Parliament</h3></span>
     <img src="" class="img-rounded">
@@ -170,7 +140,7 @@ return xmlHttp;
 
     </select>
   </div>
-<!-- column 4 councillor -->
+ column 4 councillor 
   <div class="col-md-3">
     <span><h3>County Rep</h3></span>
     <img src="" class="img-rounded">
@@ -192,7 +162,7 @@ return xmlHttp;
 </div>
 </form>
      </div>
-  <!-- processing voting data to firebase-->
+   processing voting data to firebase
   <script>
     // Send message
     var votingForm = document.getElementById('voting-form');
@@ -222,7 +192,7 @@ return xmlHttp;
         sendBtn.disabled = true;
         return false;
     }
-</script>
+</script>-->
 
     </div>                
     </body>

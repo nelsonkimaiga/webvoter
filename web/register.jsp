@@ -51,7 +51,7 @@
               <a class="toggle-nav" href="#">&#9776;</a>
               <div class="nav-mobile">
                   <ul class="left">
-                      <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                      <li><a href="index.jsp"><i class="fa fa-home"></i> Home</a></li>
                       <li><a href="register.jsp"><i class="fa fa-book"></i>Voter Registration</a></li>
                       <li><a href="vote.jsp"><i class="fa fa-fire"></i> Cast Your Vote</a></li>
                   </ul>
@@ -101,7 +101,7 @@
                             <hr>
                             <fieldset>
                                 <label>Voter ID</label>
-                                <input type="text" value='<%="VT"+(int)(Math.random()*200)%>' name="voterid">
+                                <input type="text" value='<%="VT"+(int)(Math.random()*200)%>' name="voterid" readonly>
                             </fieldset>
 <!--                            <fieldset>
                                 <label>Place of Issue</label>

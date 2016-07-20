@@ -24,7 +24,7 @@
                 <a class="toggle-nav" href="#">&#9776;</a>
                 <div class="nav-mobile">
                     <ul class="left">
-                        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
+                        <li><a href="index.jsp"><i class="fa fa-home"></i> Home</a></li>
                         <li><a href=""><i class="fa fa-book"></i>Election Management</a></li>
                         <li><a href=""><i class="fa fa-fire"></i></a></li>
                     </ul>
