@@ -19,6 +19,18 @@
     <!-- fonts -->
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <script src="js/vendor/jquery.js"></script>
+    <script type="text/javascript">
+        function validateForm(){
+            var x = document.forms["loginForm"]["voterid"].value;
+            
+        if (x == null || x == "") {
+            alert("Your Voter ID must be filled out");
+            return false;
+        }
+            return true;
+        }
+                
+    </script>            
     <body>
         <div class="container">
             <nav class="nav ">
@@ -27,7 +39,6 @@
                     <div class="nav-mobile">
                         <ul class="left">
                             <li><a href="index.jsp">Home</a></li>
-                            <li><a href="register.jsp">Voter Registration</a></li>
                             <li><a href="vote.jsp">Cast Your Vote</a></li>
                         </ul>
                         <ul class="right">
@@ -35,7 +46,7 @@
                                 <a href="#">Candidate Bios</a>
                             </li>
                             <li>
-                                <a href="#"><i class="fa fa-envelope"></i></a>
+                                <a href="#"></a>
                             </li>
                         </ul>
                     </div>
@@ -43,16 +54,22 @@
             </nav>
             <br>
             <div class="row bodycontent">
-                <div class="medium-8 columns">
-                    
+                <div class="small-12 large-4 medium-4 columns" id="loginform">
+                    <h6>Are you registered as a voter?</h6>
+                    <form action="" method="post" onsubmit="return validateForm()" name="loginForm">
+                        <fieldset>
+                            <label>Enter your voter ID number</label>
+                            <input type="text" name="voterid" placeholder="VOTER ID">
+                        </fieldset>
+                        <button type="submit" class="button success">Continue</button>
+                    </form>
+                    <hr>
+                    <p>To register as a voter, click <a href="register.jsp">here</a></p>
+                    <p><a href="">Guidelines for voter Registration</a></p>
                 </div>
                 <div class="medium-4 columns">
                     <div id="movingicon">
-                        <i class="fa fa-hourglass fa-3x fa-spin icon-color"></i>
-                        <br/>
-                        <div id="countdown">
-                            
-                        </div>                            
+                                
                     </div>                        
                 </div>                    
             </div>           

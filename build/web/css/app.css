@@ -292,3 +292,7 @@ position: relative;
     background: url(images/loader.gif) center no-repeat #fff;
 }
 
+#loginform{
+    height: 350px;
+    background: #262626;
+}
