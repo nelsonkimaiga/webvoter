@@ -56,10 +56,10 @@
             <div class="row bodycontent">
                 <div class="small-12 large-4 medium-4 columns" id="loginform">
                     <h6>Are you registered as a voter?</h6>
-                    <form action="" method="post" onsubmit="return validateForm()" name="loginForm">
+                    <form action="voterdashboard.jsp" method="post" onsubmit="return validateForm()" name="loginForm" autocomplete="off">
                         <fieldset>
                             <label>Enter your voter ID number</label>
-                            <input type="text" name="voterid" placeholder="VOTER ID">
+                            <input type="number" name="voterid" placeholder="VOTER ID">
                         </fieldset>
                         <button type="submit" class="button success">Continue</button>
                     </form>

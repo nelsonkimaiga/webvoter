@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Register as a voter</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
     <!-- fonts -->
@@ -71,7 +71,7 @@
             <br>
             <div class="row">
                 <div class="small-12 medium-12 large-12 columns">
-                    <form action="" method="" name="registrationForm" onsubmit="return validateForm()" autocomplete="off">
+                    <form action="" method="POST" name="registrationForm" onsubmit="return validateForm()" autocomplete="off">
                         <div class="large-6 columns">
                             <h6>Voter Details</h6>
                             <hr>

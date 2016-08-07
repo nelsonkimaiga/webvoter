@@ -51,7 +51,7 @@
                 <a class="toggle-nav" href="#">&#9776;</a>
                 <div class="nav-mobile">
                     <ul class="left">
-                        <li><a href="#">Home</a></li>
+                        <li><a href="index.jsp">Home</a></li>
                         <li><a href="">Election Management</a></li>
                         <li><a href=""></a></li>
                     </ul>
