@@ -46,7 +46,7 @@
           <p id="registertext">Choose an option to proceed.</p>
           <div class="row">
               <div class="small-12 medium-4 large-4 columns">
-                  <a href=""><i class="fa fa-check-square">Cast your vote</i></a>
+                  <a href="vote.jsp"><i class="fa fa-check-square">Cast your vote</i></a>
               </div>
               <div class="small-12 medium-4 large-4 columns">
                   <a href="verify.jsp">Verify your voter details</a>
@@ -60,7 +60,6 @@
         
         <script src="js/vendor/foundation.js"></script>
         <script src="js/vendor/what-input.js"></script>
-        <script src="js/jquery.countdown.min.js"></script>
         <script src="js/app.js"></script>
     </body>
 </html>

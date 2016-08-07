@@ -6,11 +6,6 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8" import="java.sql.*"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
 <head>
     <meta charset="utf-8">
@@ -54,29 +49,26 @@ function MM_validateForm() {
   </script>
 </head>
     <body>
-        <div class="container">
-            <nav class="nav ">
-                <div class="nav-center">
-                    <a class="toggle-nav" href="#">&#9776;</a>
-                    <div class="nav-mobile">
-                        <ul class="left">
-                            <li><a href="index.jsp">Home</a></li>
-                            <li><a href="register.jsp">Voter Registration</a></li>
-                            <li><a href="vote.jsp">Cast Your Vote</a></li>
-                        </ul>
-                        <ul class="right">
-                            <li>
-                                <a href="#">Candidate Bios</a>
-                            </li>
-                            <li>
-                                <a href="#"></a>
-                            </li>
-                        </ul>
-                    </div>
+        <nav class="nav ">
+            <div class="nav-center">
+                <a class="toggle-nav" href="#">&#9776;</a>
+                <div class="nav-mobile">
+                    <ul class="left">
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="register.jsp">Voter Registration</a></li>
+                        <li><a href="vote.jsp">Cast Your Vote</a></li>
+                    </ul>
+                    <ul class="right">
+                        <li>
+                            <a href="#">Candidate Bios</a>
+                        </li>
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
-            
-        </div>
+            </div>
+        </nav>
 <!--        <div class="se-pre-con"></div>
     <div id="wrapper">
      <div class="container">

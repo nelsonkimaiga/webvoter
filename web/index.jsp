@@ -32,27 +32,27 @@
                 
     </script>            
     <body>
-        <div class="container">
-            <nav class="nav ">
-                <div class="nav-center">
-                    <a class="toggle-nav" href="#">&#9776;</a>
-                    <div class="nav-mobile">
-                        <ul class="left">
-                            <li><a href="index.jsp">Home</a></li>
-                            <li><a href="vote.jsp">Cast Your Vote</a></li>
-                        </ul>
-                        <ul class="right">
-                            <li>
-                                <a href="#">Candidate Bios</a>
-                            </li>
-                            <li>
-                                <a href="#"></a>
-                            </li>
-                        </ul>
-                    </div>
+        <nav class="nav ">
+            <div class="nav-center">
+                <a class="toggle-nav" href="#">&#9776;</a>
+                <div class="nav-mobile">
+                    <ul class="left">
+                        <li><a href="index.jsp">Home</a></li>
+                        <li><a href="vote.jsp">Cast Your Vote</a></li>
+                    </ul>
+                    <ul class="right">
+                        <li>
+                            <a href="#">Candidate Bios</a>
+                        </li>
+                        <li>
+                            <a href="#"></a>
+                        </li>
+                    </ul>
                 </div>
-            </nav>
-            <br>
+            </div>
+        </nav>
+        <br>
+        <div class="container">
             <div class="row bodycontent">
                 <div class="small-12 large-4 medium-4 columns" id="loginform">
                     <h6>Are you registered as a voter?</h6>
