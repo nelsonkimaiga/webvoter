@@ -18,7 +18,7 @@ public class DbConn {
 	public static Connection getDBConnection() throws Exception{
 		Connection conn = null;
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
-		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/uchaguzi","root","303seminarian");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/webvoter","root","303seminarian");
       return conn;
 	}
 	

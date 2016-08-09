@@ -10,7 +10,7 @@
                     Connection conn=null;
                     //    conn=dbConn.getConnection();
                     Class.forName("com.mysql.jdbc.Driver").newInstance();
-    conn = DriverManager.getConnection("jdbc:mysql://197.248.5.16/cityscen_project","cityscen_kimaiga","nelsonkimaiga2016");
+    conn = DriverManager.getConnection("jdbc:mysql://localhost/webvoter","root","303seminarian");
 		
 		PreparedStatement psInsert=null;
 		
@@ -28,28 +28,27 @@
 		String sqlInsertregistration=null;
                 
                 try{
-                    sqlInsertregistration ="insert into registration (fullnames, password, idnumber, gender, date, voterid, ward, constituency, county, pollingcenter)" +"values(?, password('"+password+"'),?, ?, ?, ?, ?)";
+                    sqlInsertregistration ="INSERT into registration VALUES ('"+fullnames+"', '"+password+"', '"+idnumber+"', '"+gender+"', '"+dateofbirth+"', '"+voterid+"', '"+ward+"', '"+constituency+"', '"+county+"', '"+pollcenter+"')";
                     
-                    	psInsert=conn.prepareStatement(sqlInsertregistration);
-			psInsert.setString(1,fullnames);
-			psInsert.setString(2,password);
-			psInsert.setString(3,idnumber);
-			psInsert.setString(4,gender);
-			psInsert.setString(5,dateofbirth);
-			psInsert.setString(6,voterid);
-			psInsert.setString(7,ward);
-			psInsert.setString(8,constituency);
-			psInsert.setString(9,county);
-			psInsert.setString(10,pollcenter);
-                        
+                    	psInsert=conn.prepareStatement(sqlInsertregistration);                        
                         psInsert.executeUpdate();
+                        
+                        request.setAttribute("fullnames", fullnames);
+                        request.setAttribute("password", password);
+                        request.setAttribute("idcard", idnumber);
+                        request.setAttribute("gender", gender);
+                        request.setAttribute("dob", dateofbirth);
+                        request.setAttribute("voterid", voterid);
+                        request.setAttribute("ward", ward);
+                        request.setAttribute("constituency", constituency);
+                        request.setAttribute("county", county);
+                        request.setAttribute("pollcenter", pollcenter);
                 }
                 catch(Exception exp){
                     exp.printStackTrace();
                     request.setAttribute("error","<span class='sSError'>&nbsp; Registration is not successful, May be User ID already Exists &nbsp; </span>");
                     RequestDispatcher dispatch = request.getRequestDispatcher("/register.jsp");
                     dispatch.forward(request, response);
-                    
                 }
 %>
 <!DOCTYPE html>

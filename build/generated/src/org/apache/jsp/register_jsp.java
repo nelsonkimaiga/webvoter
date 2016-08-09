@@ -148,16 +148,11 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.print("VT"+(int)(Math.random()*200));
       out.write("' name=\"voterid\" readonly>\n");
       out.write("                            </fieldset>\n");
-      out.write("<!--                            <fieldset>\n");
-      out.write("                                <label>Place of Issue</label>\n");
-      out.write("                                <select name=\"placeissued\">\n");
-      out.write("                                    <option value=\"default\" selected disabled>Place issued</option>\n");
-      out.write("                                </select>\n");
-      out.write("                            </fieldset>-->\n");
       out.write("                            <fieldset>\n");
       out.write("                                <label>Ward</label>\n");
       out.write("                                <select name=\"ward\">\n");
       out.write("                                    <option value=\"default\" selected disabled>Ward</option>\n");
+      out.write("                                    <option value=\"donholm\">Donholm</option>\n");
       out.write("                                </select>\n");
       out.write("                            </fieldset>\n");
       out.write("                            <fieldset>\n");
@@ -172,6 +167,7 @@ public final class register_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                                <label>Polling Center</label>\n");
       out.write("                                <select name=\"pollcenter\">\n");
       out.write("                                    <option value=\"default\" selected disabled>Polling Center</option>\n");
+      out.write("                                    <option value=\"kilimani\">Kilimani</option>\n");
       out.write("                                </select>\n");
       out.write("                            </fieldset>\n");
       out.write("                        </div>\n");
