@@ -300,3 +300,5 @@ position: relative;
 #welcomemessage{
     text-align: left;
 }
+
+input {text-transform: uppercase;}
