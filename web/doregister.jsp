@@ -87,7 +87,19 @@
             </div>
         </nav>
         <div class="container bodycontent">
-            <h2>Registration Done Successfully!</h2>
+            <div class="row" id="welcomemessage">
+                <div class="small-12 medium-3 large-3 columns">
+                    <h6>Your registration as a voter has been done Successfully!</h6>
+                </div>
+            </div>
+            <hr>
+<!--            <div class="row" id="welcomemessage">
+                <p>Now that you're a registered voter, you can choose one of the following options: </p>
+                <br>
+                <div class="">
+                    
+                </div>
+            </div>-->
         </div>
         
         <script src="js/vendor/foundation.js"></script>

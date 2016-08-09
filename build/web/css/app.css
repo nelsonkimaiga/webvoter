@@ -296,3 +296,7 @@ position: relative;
     height: 350px;
     background: #262626;
 }
+
+#welcomemessage{
+    text-align: left;
+}
