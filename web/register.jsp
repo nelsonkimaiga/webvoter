@@ -71,13 +71,17 @@
             <br>
             <div class="row">
                 <div class="small-12 medium-12 large-12 columns">
-                    <form action="" method="POST" name="registrationForm" onsubmit="return validateForm()" autocomplete="off">
+                    <form action="doregister.jsp" method="POST" name="registrationForm" onsubmit="return validateForm()" autocomplete="off">
                         <div class="large-6 columns">
                             <h6>Voter Details</h6>
                             <hr>
                             <fieldset>
                                 <label>Full Names</label>
                                 <input type="text" name="fullname" placeholder="FULL NAMES">
+                            </fieldset>
+                            <fieldset>
+                                <label>Password</label>
+                                <input type="password" name="password" placeholder="PASSWORD">
                             </fieldset>
                             <fieldset>
                                 <label>ID Card Number</label>
@@ -130,7 +134,7 @@
                                 </select>
                             </fieldset>
                         </div>
-                            <button type="submit" class="button success" value="register" onclick="MM_validateForm('fullname','','R', 'idcard','','R', 'gender','','R', 'dob','','R', 'ward','','R', 'constituency','','R', 'county','','R', 'pollcenter','','R');return document.MM_returnValue">REGISTER</button>
+                            <button type="submit" class="button success" value="register" onclick="MM_validateForm('fullname','','R', 'password','','R', 'idcard','','R', 'gender','','R', 'dob','','R', 'ward','','R', 'constituency','','R', 'county','','R', 'pollcenter','','R');return document.MM_returnValue">REGISTER</button>
                     </form>
                 </div>
             </div>
