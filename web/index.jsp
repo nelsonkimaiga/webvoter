@@ -22,9 +22,14 @@
     <script type="text/javascript">
         function validateForm(){
             var x = document.forms["loginForm"]["voterid"].value;
+            var y = document.forms["loginForm"]["password"].value;
             
         if (x == null || x == "") {
             alert("Your Voter ID must be filled out");
+            return false;
+        }
+        if(y == null || y == ""){
+            alert("Your password must be filled out");
             return false;
         }
             return true;
@@ -55,11 +60,15 @@
         <div class="container">
             <div class="row bodycontent">
                 <div class="small-12 large-4 medium-4 columns" id="loginform">
-                    <h6>Are you registered as a voter?</h6>
+                    <h6>Are you registered as a voter? Login with your ID Number as username</h6>
                     <form action="voterdashboard.jsp" method="post" onsubmit="return validateForm()" name="loginForm" autocomplete="off">
                         <fieldset>
                             <label>Enter your voter ID number</label>
-                            <input type="number" name="voterid" placeholder="VOTER ID">
+                            <input type="number" name="voterid" placeholder="ID NUMBER">
+                        </fieldset>
+                        <fieldset>
+                            <label>Password</label>
+                            <input type="password" name="password" placeholder="PASSWORD">
                         </fieldset>
                         <button type="submit" class="button success">Continue</button>
                     </form>
