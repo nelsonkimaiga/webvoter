@@ -61,7 +61,7 @@
             <div class="row bodycontent">
                 <div class="small-12 large-4 medium-4 columns" id="loginform">
                     <h6>Are you registered as a voter? Login with your ID Number as username</h6>
-                    <form action="voterdashboard.jsp" method="post" onsubmit="return validateForm()" name="loginForm" autocomplete="off">
+                    <form action="doLogin.jsp" method="post" onsubmit="return validateForm()" name="loginForm" autocomplete="off">
                         <fieldset>
                             <label>Enter your voter ID number</label>
                             <input type="number" name="voterid" placeholder="ID NUMBER">
