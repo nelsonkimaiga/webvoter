@@ -107,16 +107,11 @@
                                 <label>Voter ID</label>
                                 <input type="text" value='<%="VT"+(int)(Math.random()*200)%>' name="voterid" readonly>
                             </fieldset>
-<!--                            <fieldset>
-                                <label>Place of Issue</label>
-                                <select name="placeissued">
-                                    <option value="default" selected disabled>Place issued</option>
-                                </select>
-                            </fieldset>-->
                             <fieldset>
                                 <label>Ward</label>
                                 <select name="ward">
                                     <option value="default" selected disabled>Ward</option>
+                                    <option value="donholm">Donholm</option>
                                 </select>
                             </fieldset>
                             <fieldset>
@@ -131,6 +126,7 @@
                                 <label>Polling Center</label>
                                 <select name="pollcenter">
                                     <option value="default" selected disabled>Polling Center</option>
+                                    <option value="kilimani">Kilimani</option>
                                 </select>
                             </fieldset>
                         </div>
